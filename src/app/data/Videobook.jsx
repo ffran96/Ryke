@@ -4,56 +4,64 @@ const Videos = [
     title: "MIGGAN - Tu y Yo (Shot By Enrique Ferri)",
     src: "short-tu-y-yo-miggan.mp4",
     thumbnail: "",
-    slug: "short-tu-y-yo-miggan"
+    slug: "short-tu-y-yo-miggan",
+    yt: "QU8lusHvELk",
   },
   {
     id: 2,
     title: "RedMoon X Iván Valera - Me Dijiste Adiós (Official Video)",
     src: "short-me-dijiste-adios-red-moon-x-ivan-valera.mp4",
     thumbnail: "",
-    slug: "short-me-dijiste-adios-red-moon-x-ivan-valera"
+    slug: "short-me-dijiste-adios-red-moon-x-ivan-valera",
+    yt: "Mv9o7fnIqNI",
   },
   {
     id: 3,
     title: "MONTALVA - SON MIS RAÍCES",
     src: "short-son-mis-raices-montalva.mp4",
     thumbnail: "",
-    slug: "short-son-mis-raices-montalva"
+    slug: "short-son-mis-raices-montalva",
+    yt: "dIi2kOZkLSA",
   },
   {
     id: 4,
     title: "MIGGAN - Te Ves Dura (Shot By Enrique Ferri)",
     src: "short-te-ves-bien-dura-miggan.mp4",
     thumbnail: "",
-    slug: "short-te-ves-bien-dura-miggan"
+    slug: "short-te-ves-bien-dura-miggan",
+    yt: "Jwm4tlyDIPw",
   },
   {
     id: 5,
     title: "'aigua' de GUERRERO",
     src: "short-aigua-guerrero.mp4",
     thumbnail: "",
-    slug: "short-aigua-guerrero"
+    slug: "short-aigua-guerrero",
+    yt: "Jwm4tlyDIPw",
   },
   {
     id: 6,
     title: "MWS 2023 |🎖 TOP 12 | Prueba de Talento | VALENCIA",
     src: "short-mws-2023-prueba-talento-valencia-top-12.mp4",
     thumbnail: "",
-    slug: "short-mws-2023-prueba-talento-valencia-top-12"
+    slug: "short-mws-2023-prueba-talento-valencia-top-12",
+    yt: "p6BYNKQpE6A",
   },
   {
     id: 7,
     title: "CHUSCO FLX - PROMESAS🔗 (VIDEOCLIP OFICIAL)",
     src: "short-promesas-chusco.mp4",
     thumbnail: "",
-    slug: "short-promesas-chusco"
+    slug: "short-promesas-chusco",
+    yt: "_EnL6-EVM1U",
   },
   {
     id: 8,
     title: "Safari Club - Ojitos De Miel - Videoclip Oficial",
     src: "short-ojitos-de-miel-safari-club.mp4",
     thumbnail: "",
-    slug: "short-ojitos-de-miel-safari-club"
+    slug: "short-ojitos-de-miel-safari-club",
+    yt: "xwo1hLvFH6M",
   },
 ];
 
