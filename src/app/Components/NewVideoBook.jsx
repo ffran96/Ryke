@@ -14,15 +14,19 @@ import {
 import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NewVideoBook() {
+  const pathname = usePathname(); // Obtiene la ruta actual
+
+  // 🔹 Estado para forzar la actualización cuando cambia la ruta
+  const [reset, setReset] = useState(0);
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
     api.on("select", () => {
@@ -30,9 +34,15 @@ export default function NewVideoBook() {
     });
   }, [api]);
 
+  // 🔹 Forzar la actualización cuando se cambia la ruta
+  useEffect(() => {
+    setReset((prev) => prev + 1);
+  }, [pathname]);
+
   const Basis = "md:basis-auto";
+
   return (
-    <ContentSection SectionId="video-book">
+    <ContentSection SectionId="video-book" key={reset}> {/* 🔹 Key cambia con reset */}
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
       <article>
         <Carousel
@@ -41,23 +51,18 @@ export default function NewVideoBook() {
             align: "start",
           }}
         >
-          <CarouselContent className="">
+          <CarouselContent>
             {Videos.map(({ title, src, thumbnail }) => (
-              <CarouselItem
-                key={title}
-                className={`${Basis} flex flex-col gap-3`}
-              >
-                <Link href={`/ultimos-trabajos/${src.replace(/\.mp4$/, '')}`}>
+              <CarouselItem key={title} className={`${Basis} flex flex-col gap-3`}>
+                <Link href={`/ultimos-trabajos/${src.replace(/\.mp4$/, "")}`}>
                   <Video Source={src} PosterImage={thumbnail} />
                 </Link>
-                <h3 className="max-w-[300px] m-auto text-xl text-center">
-                  {title}
-                </h3>
+                <h3 className="max-w-[300px] m-auto text-xl text-center">{title}</h3>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden xl:inline-flex absolute bottom-0 left-5 size-14 hover:bg-[#dcd9d1] hover:border-[#ffffff13] hover:text-[#000000e7] transition-colors ease-in-out duration-300" />
-          <CarouselNext className="hidden xl:inline-flex absolute bottom-0 right-5 size-14 hover:bg-[#dcd9d1] hover:border-[#ffffff13] hover:text-[#000000e7] transition-colors ease-in-out duration-300" />
+          <CarouselPrevious className="hidden xl:inline-flex absolute bottom-0 left-5 size-14" />
+          <CarouselNext className="hidden xl:inline-flex absolute bottom-0 right-5 size-14" />
         </Carousel>
         <CarouselSelector Array={Videos} CurrentCard={current} />
       </article>
