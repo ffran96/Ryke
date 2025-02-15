@@ -19,17 +19,13 @@ import { usePathname } from "next/navigation"; // Detecta cambios de URL
 export default function NewVideoBook() {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
-  const pathname = usePathname(); // Obtiene la URL actual
+  const pathname = usePathname(); // Detecta la URL actual
 
+  // 🔄 Memorizar la lista de videos (evita renders innecesarios)
   const videoList = useMemo(() => Videos, []);
 
-  const count = useMemo(() => api?.scrollSnapList().length || 0, [api]);
-
-  // 🔥 Forzar re-render cuando el usuario vuelve a esta página
-  useEffect(() => {
-    setApi(null); // Resetea el carrusel
-    setTimeout(() => setApi(api), 100); // Vuelve a asignarlo
-  }, [pathname]); // Se ejecuta cuando cambia la URL
+  // 🔄 Forzar la actualización del carrusel con un `key` único
+  const carouselKey = useMemo(() => `${pathname}-${Date.now()}`, [pathname]);
 
   useEffect(() => {
     if (!api) return;
@@ -39,9 +35,7 @@ export default function NewVideoBook() {
     const updateCurrent = () => setCurrent(api.selectedScrollSnap() + 1);
     api.on("select", updateCurrent);
 
-    return () => {
-      api.off("select", updateCurrent);
-    };
+    return () => api.off("select", updateCurrent);
   }, [api]);
 
   return (
@@ -49,6 +43,7 @@ export default function NewVideoBook() {
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
       <article>
         <Carousel
+          key={carouselKey} // 🔥 Forzar re-render cuando cambia la URL
           setApi={setApi}
           opts={{
             align: "start",
