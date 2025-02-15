@@ -56,12 +56,12 @@ export default function NewGallery() {
         }}
         className="w-full"
       >
-        <CarouselContent id={galleryID} className="">
+        <CarouselContent id={galleryID}>
           {GalleryImages.map(
             ({ largeURL, width, height, thumbnailURL, altThumbnail }) => (
               <CarouselItem
                 key={largeURL}
-                className="md:basis-auto group xl:hover:z-10 xl:hover:scale-105 xl:transition-all relative object-cover"
+                className="md:basis-auto group xl:hover:z-10  relative object-cover"
                 href={largeURL}
                 data-pswp-width={width}
                 data-pswp-height={height}
@@ -71,7 +71,7 @@ export default function NewGallery() {
                 <Image
                   src={thumbnailURL}
                   quality={40}
-                  className="w-[400px] h-[400px] object-cover rounded-[12px]"
+                  className="w-[400px] h-[400px] object-cover rounded-[12px] xl:hover:scale-105 xl:transition-all"
                   alt={altThumbnail}
                   loading="lazy"
                 />

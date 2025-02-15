@@ -24,7 +24,7 @@ export default function Header() {
                   <li key={id}>
                     <Link
                       className="text-slate-100 text-3xl px-6 py-4"
-                      href={link}
+                      href={`/${link}`}
                     >
                       {name}
                     </Link>

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
+import Link from "next/link";
 
 export default function NewVideoBook() {
   const [api, setApi] = useState();
@@ -46,7 +47,9 @@ export default function NewVideoBook() {
                 key={title}
                 className={`${Basis} flex flex-col gap-3`}
               >
-                <Video Source={src} PosterImage={thumbnail} />
+                <Link href={`/ultimos-trabajos/${src.replace(/\.mp4$/, '')}`}>
+                  <Video Source={src} PosterImage={thumbnail} />
+                </Link>
                 <h3 className="max-w-[300px] m-auto text-xl text-center">
                   {title}
                 </h3>
