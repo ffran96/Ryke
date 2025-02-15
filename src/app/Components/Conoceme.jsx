@@ -21,15 +21,15 @@ export default function Conoceme() {
           <p>
             Mi inspiración proviene de la cultura urbana, sus sonidos y su
             energía, elementos que integran cada uno de mis proyectos para
-            dotarlos de autenticidad y fuerza. Trabajo con artistas de diversos
+            <Underline> dotarlos de autenticidad y fuerza.</Underline> Trabajo con artistas de diversos
             géneros, buscando  <Underline>capturar la esencia de su música</Underline> a través de una
             narrativa visual potente y un montaje innovador.
           </p>
           <p className="italic">
             &#34;Soy un filmmaker comprometido con la creatividad, siempre en
-            busca de nuevos desafíos que me permitan evolucionar y seguir
-            contando historias a través de <Underline>la imagen, el ritmo y la
-            emoción.</Underline>&#34;
+            <Underline> busca de nuevos desafíos que me permitan evolucionar</Underline> y seguir
+            contando historias a través de la imagen, el ritmo y la
+            emoción.&#34;
           </p>
         </div>
         <Image
