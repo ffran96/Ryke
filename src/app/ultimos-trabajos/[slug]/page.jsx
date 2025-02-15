@@ -32,10 +32,9 @@ export default function SlugPage({ params }) {
 
   return (
     <ContentSection>
-      <h2 className="pt-20">{video.title}</h2>
+      <h2 className="pt-20 mb-5">{video.title}</h2>
       <iframe
-        width="560"
-        height="315"
+        className="w-full aspect-video"
         src={`https://www.youtube.com/embed/${video.yt}?si=9DyWAvH--olFCH-E`}
         title="YouTube video player"
         frameborder="0"
