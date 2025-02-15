@@ -4,15 +4,16 @@ import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
   return Videos.map((video) => ({
-    slug: video.src.replace(/\.mp4$/, ''), // Eliminamos la extensión
+    slug: video.slug, // Utilizamos el campo slug directamente
   }));
 }
 
 export default function VideoPage({ params }) {
-  const video = Videos.find((v) => v.src.replace(/\.mp4$/, '') === params.slug);
+  const video = Videos.find((v) => v.slug === params.slug);
 
   if (!video) {
     notFound(); // Maneja 404 correctamente en App Router
+    return null;
   }
 
   return (
