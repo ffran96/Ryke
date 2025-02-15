@@ -15,6 +15,7 @@ import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
 import { useRouter } from "next/navigation"; // Importamos el router
+export const dynamic = "force-dynamic"; // Desactiva la caché de Next.js para esta página
 
 export default function NewVideoBook() {
   const [api, setApi] = useState(null);
