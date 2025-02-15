@@ -59,23 +59,22 @@ export default function NewGallery() {
         <CarouselContent id={galleryID} className="">
           {GalleryImages.map(
             ({ largeURL, width, height, thumbnailURL, altThumbnail }) => (
-              <CarouselItem key={largeURL} className="md:basis-auto">
-                <a
-                  className="group xl:hover:z-10 xl:hover:scale-105  xl:transition-all relative object-cover"
-                  href={largeURL}
-                  data-pswp-width={width}
-                  data-pswp-height={height}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src={thumbnailURL}
-                    quality={40}
-                    className="w-[400px] h-[400px] object-cover rounded-[12px]"
-                    alt={altThumbnail}
-                    loading="lazy"
-                  />
-                </a>
+              <CarouselItem
+                key={largeURL}
+                className="md:basis-auto group xl:hover:z-10 xl:hover:scale-105 xl:transition-all relative object-cover"
+                href={largeURL}
+                data-pswp-width={width}
+                data-pswp-height={height}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src={thumbnailURL}
+                  quality={40}
+                  className="w-[400px] h-[400px] object-cover rounded-[12px]"
+                  alt={altThumbnail}
+                  loading="lazy"
+                />
               </CarouselItem>
             )
           )}
