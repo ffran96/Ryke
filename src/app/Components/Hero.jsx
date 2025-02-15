@@ -53,7 +53,7 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div className="absolute bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#00000062] via-30% to-[#000000] to-100%" />
+      <div className="absolute bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#00000019] via-40% to-[#000000] to-100%" />
     </section>
   );
 }
