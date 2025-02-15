@@ -1,24 +1,8 @@
-import ContentSection from '@/app/Components/ContentSection';
-import Videos from '@/app/data/Videobook';
-import { notFound } from 'next/navigation';
+import ContentSection from '@/app/Components/ContentSection'
+import React from 'react'
 
-export function generateStaticParams() {
-  return Videos.map((video) => ({
-    slug: video.slug, // Utilizamos el campo slug directamente
-  }));
-}
-
-export default function VideoPage({ params }) {
-  const video = Videos.find((v) => v.slug === params.slug);
-
-  if (!video) {
-    notFound(); // Maneja 404 correctamente en App Router
-    return null;
-  }
-
+export default function SlugPage() {
   return (
-    <ContentSection>
-      <h1 className='pt-20'>{video.title}</h1>
-    </ContentSection>
-  );
+    <ContentSection><h1 className='pt-20'>Hello!!</h1></ContentSection>
+  )
 }
