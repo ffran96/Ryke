@@ -14,51 +14,23 @@ import {
 import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Importamos el router
-export const dynamic = "force-dynamic"; // Desactiva la caché de Next.js para esta página
 
 export default function NewVideoBook() {
-  const [api, setApi] = useState(null);
+  const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-  const [isClient, setIsClient] = useState(false); // Estado para forzar el re-render
-  const router = useRouter(); // Next.js router para detectar navegación
-
   useEffect(() => {
-    setIsClient(true); // Se activa cuando el componente se monta
-  }, []);
-
-  useEffect(() => {
-    if (!api) return;
-
+    if (!api) {
+      return;
+    }
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
-
-    const updateCurrent = () => setCurrent(api.selectedScrollSnap() + 1);
-    api.on("select", updateCurrent);
-
-    return () => {
-      api.off("select", updateCurrent);
-    };
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
   }, [api]);
 
-  useEffect(() => {
-    const handleRouteChange = () => {
-      setTimeout(() => {
-        setIsClient(false);
-        setIsClient(true);
-      }, 100); // Pequeño retraso para evitar problemas de caché
-    };
-
-    router.events?.on("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      router.events?.off("routeChangeComplete", handleRouteChange);
-    };
-  }, []);
-
-  if (!isClient) return null; // Evita errores en la primera carga
-
+  const Basis = "md:basis-auto";
   return (
     <ContentSection SectionId="video-book">
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
@@ -70,12 +42,18 @@ export default function NewVideoBook() {
           }}
         >
           <CarouselContent>
-            {Videos.map(({ title, src, thumbnail, slug }) => (
-              <CarouselItem key={slug} className="md:basis-auto flex flex-col gap-3">
+            {Videos.map(({ title, src, thumbnail,slug }) => (
+              <CarouselItem
+                key={title}
+                className={`${Basis} flex flex-col gap-3`}
+              >
                 <Link href={`/ultimos-trabajos/${slug}`}>
-                  <Video Source={`/${src}`} PosterImage={thumbnail} />
+                <Video Source={`/${src}`} PosterImage={thumbnail} />
+                
                 </Link>
-                <h3 className="max-w-[300px] m-auto text-xl text-center">{title}</h3>
+                <h3 className="max-w-[300px] m-auto text-xl text-center">
+                  {title}
+                </h3>
               </CarouselItem>
             ))}
           </CarouselContent>
