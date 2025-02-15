@@ -1,7 +1,6 @@
 import ContentSection from "@/app/Components/ContentSection";
 import Videos from "../../data/Videobook";
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+
 
 // Esta función se utiliza para generar las rutas estáticas de los slugs
 export function generateStaticParams() {

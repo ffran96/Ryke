@@ -16,40 +16,51 @@ import Title2 from "./Title2";
 import Link from "next/link";
 
 export default function NewVideoBook() {
-  const [api, setApi] = useState();
+  const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+
+  // Este useEffect se asegura de actualizar el estado cada vez que el api cambia
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
+
+    // Establece el número total de elementos
     setCount(api.scrollSnapList().length);
+    
+    // Establece el valor inicial de 'current' al primer elemento seleccionado
     setCurrent(api.selectedScrollSnap() + 1);
+
+    // Añade un listener para actualizar el 'current' cuando se cambia el seleccionado
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
+
+    // Limpiar el listener cuando el componente se desmonte o el api cambie
+    return () => {
+      api.off("select");
+    };
   }, [api]);
 
   const Basis = "md:basis-auto";
+
   return (
     <ContentSection SectionId="video-book">
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
       <article>
         <Carousel
-          setApi={setApi}
+          setApi={setApi} // Actualiza el estado de api
           opts={{
             align: "start",
           }}
         >
           <CarouselContent>
-            {Videos.map(({ title, src, thumbnail,slug }) => (
+            {Videos.map(({ title, src, thumbnail, slug }) => (
               <CarouselItem
-                key={title}
+                key={slug} // Cambié 'title' por 'slug' como key única para evitar conflictos
                 className={`${Basis} flex flex-col gap-3`}
               >
                 <Link href={`/ultimos-trabajos/${slug}`}>
-                <Video Source={`/${src}`} PosterImage={thumbnail} />
-                
+                  <Video Source={`/${src}`} PosterImage={thumbnail} />
                 </Link>
                 <h3 className="max-w-[300px] m-auto text-xl text-center">
                   {title}
