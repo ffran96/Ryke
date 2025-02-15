@@ -14,57 +14,67 @@ import {
 import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // Importamos el router
 
 export default function NewVideoBook() {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [isClient, setIsClient] = useState(false); // Estado para forzar el re-render
+  const router = useRouter(); // Next.js router para detectar navegación
 
-  // Este useEffect se asegura de actualizar el estado cada vez que el api cambia
+  useEffect(() => {
+    setIsClient(true); // Se activa cuando el componente se monta
+  }, []);
+
   useEffect(() => {
     if (!api) return;
 
-    // Establece el número total de elementos
     setCount(api.scrollSnapList().length);
-    
-    // Establece el valor inicial de 'current' al primer elemento seleccionado
     setCurrent(api.selectedScrollSnap() + 1);
 
-    // Añade un listener para actualizar el 'current' cuando se cambia el seleccionado
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
+    const updateCurrent = () => setCurrent(api.selectedScrollSnap() + 1);
+    api.on("select", updateCurrent);
 
-    // Limpiar el listener cuando el componente se desmonte o el api cambie
     return () => {
-      api.off("select");
+      api.off("select", updateCurrent);
     };
   }, [api]);
 
-  const Basis = "md:basis-auto";
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setTimeout(() => {
+        setIsClient(false);
+        setIsClient(true);
+      }, 100); // Pequeño retraso para evitar problemas de caché
+    };
+
+    router.events?.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events?.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
+
+  if (!isClient) return null; // Evita errores en la primera carga
 
   return (
     <ContentSection SectionId="video-book">
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
       <article>
         <Carousel
-          setApi={setApi} // Actualiza el estado de api
+          setApi={setApi}
           opts={{
             align: "start",
           }}
         >
           <CarouselContent>
             {Videos.map(({ title, src, thumbnail, slug }) => (
-              <CarouselItem
-                key={slug} // Cambié 'title' por 'slug' como key única para evitar conflictos
-                className={`${Basis} flex flex-col gap-3`}
-              >
+              <CarouselItem key={slug} className="md:basis-auto flex flex-col gap-3">
                 <Link href={`/ultimos-trabajos/${slug}`}>
                   <Video Source={`/${src}`} PosterImage={thumbnail} />
                 </Link>
-                <h3 className="max-w-[300px] m-auto text-xl text-center">
-                  {title}
-                </h3>
+                <h3 className="max-w-[300px] m-auto text-xl text-center">{title}</h3>
               </CarouselItem>
             ))}
           </CarouselContent>
