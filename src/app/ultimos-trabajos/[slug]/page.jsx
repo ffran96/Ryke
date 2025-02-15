@@ -32,13 +32,13 @@ export default function SlugPage({ params }) {
 
   return (
     <ContentSection>
-      <h2 className="pt-20 mb-5">{video.title}</h2>
+      <h2 className="pt-20 mb-5 text-xl">{video.title}</h2>
       <iframe
         className="w-full aspect-video"
         src={`https://www.youtube.com/embed/${video.yt}?si=9DyWAvH--olFCH-E`}
-        title="YouTube video player"
-        frameborder="0"
-        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       ></iframe>
     </ContentSection>
   );
