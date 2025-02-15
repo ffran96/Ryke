@@ -14,16 +14,22 @@ import {
 import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Detecta cambios de URL
 
 export default function NewVideoBook() {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
+  const pathname = usePathname(); // Obtiene la URL actual
 
-  // Memorizar la lista de videos para evitar recalculaciones innecesarias
   const videoList = useMemo(() => Videos, []);
 
-  // Memorizar el conteo de snaps solo cuando `api` cambie
   const count = useMemo(() => api?.scrollSnapList().length || 0, [api]);
+
+  // 🔥 Forzar re-render cuando el usuario vuelve a esta página
+  useEffect(() => {
+    setApi(null); // Resetea el carrusel
+    setTimeout(() => setApi(api), 100); // Vuelve a asignarlo
+  }, [pathname]); // Se ejecuta cuando cambia la URL
 
   useEffect(() => {
     if (!api) return;
