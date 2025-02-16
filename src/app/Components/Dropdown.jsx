@@ -14,7 +14,7 @@ export default function Dropdown({ HandleClick, Enlaces, setHandleClick }) {
           <ul className="space-y-20 text-center uppercase">
             {Enlaces.map(({ id, link, name }) => (
               <li className="text-slate-100 text-4xl" key={id}>
-                <Link onClick={() => setHandleClick(!HandleClick)} href={link}>
+                <Link onClick={() => setHandleClick(!HandleClick)} href={`/${link}`}>
                   {name}
                 </Link>
               </li>
