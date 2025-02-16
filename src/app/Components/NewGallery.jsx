@@ -70,8 +70,10 @@ export default function NewGallery() {
                 >
                   <Image
                     src={thumbnailURL}
-                    quality={40}
-                    className="w-[400px] h-[400px] object-cover rounded-[12px]"
+                    quality={60}
+                    width={400}
+                    height={400}
+                    className="size-[400px] object-cover rounded-[12px]"
                     alt={altThumbnail}
                     loading="lazy"
                   />
