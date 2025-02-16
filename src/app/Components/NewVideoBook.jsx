@@ -30,7 +30,6 @@ export default function NewVideoBook() {
     });
   }, [api]);
 
-  const Basis = "md:basis-auto";
   return (
     <ContentSection SectionId="video-book">
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
@@ -42,14 +41,13 @@ export default function NewVideoBook() {
           }}
         >
           <CarouselContent>
-            {Videos.map(({ title, src, thumbnail,slug }) => (
+            {Videos.map(({ title, src, slug }) => (
               <CarouselItem
                 key={title}
-                className={`${Basis} flex flex-col gap-3`}
+                className="md:basis-auto flex flex-col gap-3`"
               >
                 <Link href={`/ultimos-trabajos/${slug}`}>
-                <Video Source={`/${src}`} PosterImage={thumbnail} />
-                
+                  <Video Source={`/${src}`} />
                 </Link>
                 <h3 className="max-w-[300px] m-auto text-xl text-center">
                   {title}

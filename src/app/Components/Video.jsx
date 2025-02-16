@@ -1,12 +1,10 @@
 import React from "react";
 
-export default function Video({Source, PosterImage}) {
+export default function Video({Source}) {
   return (
     <video
       src={Source}
       type="video/mp4"
-      preload="auto"
-      poster={PosterImage}
       autoPlay
       muted
       playsInline
