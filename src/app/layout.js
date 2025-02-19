@@ -25,7 +25,7 @@ export const metadata = {
     "Narrativa visual",
   ],
   openGraph: {
-    images: "https://www.enriqueferri.com/ryke-og.jpg",
+    images: "https://www.enriqueferri.com/enrique-ferri-galeria-3.jpg",
   },
 };
 
