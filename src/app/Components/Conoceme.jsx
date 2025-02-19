@@ -9,8 +9,8 @@ export default function Conoceme() {
   return (
     <ContentSection SectionId={"conoceme"}>
       <article className="pt-20 flex flex-col xl:flex-row items-center justify-between gap-10">
-        <div className="max-w-[600px] [&>p]:mb-4 [&>p]:leading-6 xl[&>p]:leading-[30px] [&>p]:text-lg md:[&>p]:text-2xl [&>p]:text-pretty">
-          <Title2>Conóceme</Title2>
+        <div className="max-w-[365px] [&>p]:mb-4 [&>p]:leading-6 xl[&>p]:leading-[30px] [&>p]:text-sm md:[&>p]:text-2xl [&>p]:text-pretty">
+          <Title2 Class="max-w-[365px]">Conóceme</Title2>
           <p>
             Desde siempre he sentido una profunda pasión por el mundo
             audiovisual. De manera autodidacta, he perfeccionado mi estilo en la

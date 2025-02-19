@@ -1,12 +1,8 @@
-import { Lora } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import FontAwesomeConfig from "../../fontawesome";
 import { Analytics } from "@vercel/analytics/react";
-
-const inter = Lora({ subsets: ["latin"] });
-const { className } = inter;
 
 export const metadata = {
   title: "Filmaker profesional en Valencia - Enrique Ferri",
@@ -36,7 +32,7 @@ export default function RootLayout({ children }) {
         <FontAwesomeConfig />
         <Analytics />
       </head>
-      <body className={className}>
+      <body>
         <Header />
         {children}
         <Footer />

@@ -44,7 +44,7 @@ export default function NewVideoBook() {
             {Videos.map(({ title, src, slug }) => (
               <CarouselItem
                 key={title}
-                className="md:basis-auto flex flex-col gap-3`"
+                className="md:basis-auto flex flex-col gap-3"
               >
                 <Link href={`/ultimos-trabajos/${slug}`}>
                   <Video Source={`/${src}`} />

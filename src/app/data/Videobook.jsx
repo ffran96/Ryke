@@ -1,7 +1,7 @@
 const Videos = [
   {
     id: 1,
-    title: "MIGGAN - Tu y Yo (Shot By Enrique Ferri)",
+    title: "Miggan - Tu y yo",
     src: "short-tu-y-yo-miggan.mp4",
     thumbnail: "",
     slug: "short-tu-y-yo-miggan",
@@ -9,7 +9,7 @@ const Videos = [
   },
   {
     id: 2,
-    title: "RedMoon X Iván Valera - Me Dijiste Adiós (Official Video)",
+    title: "RedMoon X Iván Valera - Me dijiste adiós",
     src: "short-me-dijiste-adios-red-moon-x-ivan-valera.mp4",
     thumbnail: "",
     slug: "short-me-dijiste-adios-red-moon-x-ivan-valera",
@@ -17,7 +17,7 @@ const Videos = [
   },
   {
     id: 3,
-    title: "MONTALVA - SON MIS RAÍCES",
+    title: "Montalva - Son mis raíces",
     src: "short-son-mis-raices-montalva.mp4",
     thumbnail: "",
     slug: "short-son-mis-raices-montalva",
@@ -25,7 +25,7 @@ const Videos = [
   },
   {
     id: 4,
-    title: "MIGGAN - Te Ves Dura (Shot By Enrique Ferri)",
+    title: "Miggan - Te ves dura",
     src: "short-te-ves-bien-dura-miggan.mp4",
     thumbnail: "",
     slug: "short-te-ves-bien-dura-miggan",
@@ -33,7 +33,7 @@ const Videos = [
   },
   {
     id: 5,
-    title: "'aigua' de GUERRERO",
+    title: "'Aigua' de GUERRERO",
     src: "short-aigua-guerrero.mp4",
     thumbnail: "",
     slug: "short-aigua-guerrero",
@@ -41,7 +41,7 @@ const Videos = [
   },
   {
     id: 6,
-    title: "MWS 2023 |🎖 TOP 12 | Prueba de Talento | VALENCIA",
+    title: "MWS 2023 - TOP 12 - Prueba de Talento ",
     src: "short-mws-2023-prueba-talento-valencia-top-12.mp4",
     thumbnail: "",
     slug: "short-mws-2023-prueba-talento-valencia-top-12",
@@ -49,7 +49,7 @@ const Videos = [
   },
   {
     id: 7,
-    title: "CHUSCO FLX - PROMESAS🔗 (VIDEOCLIP OFICIAL)",
+    title: "Chusco FLX - Promesas",
     src: "short-promesas-chusco.mp4",
     thumbnail: "",
     slug: "short-promesas-chusco",
@@ -57,7 +57,7 @@ const Videos = [
   },
   {
     id: 8,
-    title: "Safari Club - Ojitos De Miel - Videoclip Oficial",
+    title: "Safari Club - Ojitos de miel",
     src: "short-ojitos-de-miel-safari-club.mp4",
     thumbnail: "",
     slug: "short-ojitos-de-miel-safari-club",
