@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ContentSection from "./ContentSection";
 import Image from "next/image";
-import ContactToRyke from "../../../public/ryke-contactame.png";
+import ContactToRyke from "../../../public/ryke-contactame.jpg";
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -48,7 +48,7 @@ export default function Contacto() {
         <Image
           src={ContactToRyke}
           alt="Joss posando con una camara polaroid."
-          className="lg:size-[600px] xl:size-[500px] object-cover rounded-[12px]"
+          className="lg:w-[600px] xl:w-[500px] object-cover rounded-[12px]"
         />
         {/* Si se ha enviado el formulario, renderizar el mensaje de éxito */}
         {submitted ? (
