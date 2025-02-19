@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <>
       {!HandleClick && (
-        <header className="flex items-center justify-between 2xl:justify-evenly fixed px-6 top-0 w-full h-[67px] z-50 backdrop-blur-lg">
+        <header className="flex items-center justify-between 2xl:px-28 2xl:justify-between fixed px-6 top-0 w-full h-[67px] z-50 backdrop-blur-lg">
           <Link onClick={() => setHandleClick(false)} href="/">
             <Logo />
           </Link>
@@ -23,7 +23,7 @@ export default function Header() {
                 {Enlaces.map(({ id, link, name }) => (
                   <li key={id}>
                     <Link
-                      className="text-slate-100 text-3xl px-6 py-4"
+                      className="text-slate-100 text-2xl px-6 py-4 uppercase"
                       href={`/${link}`}
                     >
                       {name}
