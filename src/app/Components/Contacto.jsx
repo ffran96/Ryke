@@ -48,7 +48,7 @@ export default function Contacto() {
         <Image
           src={ContactToRyke}
           alt="Joss posando con una camara polaroid."
-          className="lg:w-[600px] xl:w-[500px] object-cover rounded-[12px]"
+          className="w-[400px] h-[460px]  object-cover rounded-[12px]"
         />
         {/* Si se ha enviado el formulario, renderizar el mensaje de éxito */}
         {submitted ? (
