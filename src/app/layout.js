@@ -5,7 +5,7 @@ import FontAwesomeConfig from "../../fontawesome";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: "Filmaker profesional en Valencia - Enrique Ferri",
+  title: "Enrique Ferri - Filmaker profesional en Valencia",
   description:
     "Filmmaker en Valencia. Cine, publicidad y videoclips con una visión cinematográfica única. ¡Descubre mi trabajo!!",
   keywords: [
