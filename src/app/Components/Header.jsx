@@ -19,7 +19,7 @@ export default function Header() {
           </Link>
           <nav>
             {!HandleClick && (
-              <ul className="hidden 2xl:flex">
+              <ul className="hidden 2xl:flex [&>li]:select-none">
                 {Enlaces.map(({ id, link, name }) => (
                   <li key={id}>
                     <Link

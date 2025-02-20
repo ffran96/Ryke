@@ -60,7 +60,7 @@ export default function Contacto() {
           /* Si no se ha enviado el formulario, renderizar el formulario */
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-3 text-[#000000] w-full lg:w-[600px] xl:w-[360px] [&>input]:rounded-[12px] [&>input]:text-xl [&>input]:h-12 [&>input]:p-4 [&>textarea]:h-52 [&>input]:placeholder-[#363636] [&>input]:text-[#363636] [&>textarea]:p-4 [&>textarea]:text-xl [&>textarea]:rounded-[12px] [&>textarea]:placeholder-[#363636] [&>363636]:text-[#dcd9d1]"
+            className="flex flex-col gap-3 text-[#000000] w-full lg:w-[600px] xl:w-[360px] [&>input]:rounded-[12px] [&>input]:text-md [&>input]:h-12 [&>input]:p-4 [&>textarea]:h-52 [&>input]:placeholder-[#363636] [&>input]:text-[#363636] [&>textarea]:p-4 [&>textarea]:text-md [&>textarea]:rounded-[12px] [&>textarea]:placeholder-[#363636] [&>363636]:text-[#dcd9d1]"
           >
             <input
               id="name"
@@ -95,7 +95,7 @@ export default function Contacto() {
             <button
               type="submit"
               disabled={isSubmitting} // Deshabilitar el botón cuando se esté enviando
-              className="bg-[#dcd9d1] rounded-[12px] uppercase tracking-widest text-[#000000] hover:opacity-90 w-fit px-8 py-4 text-xl transition-colors ease-in-out duration-300"
+              className="bg-[#dcd9d1] rounded-[12px] uppercase tracking-widest text-[#000000] hover:opacity-90 w-fit px-8 py-4 text-lg transition-colors ease-in-out duration-300"
             >
               {isSubmitting ? "Enviando..." : "Enviar"} {/* Cambiar el texto del botón */}
             </button>
