@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section id={"Hero"} className="select-none relative">
       <video
-        className="w-dvw max-h-dvh object-cover"
+        className="h-svh  w-svw object-cover"
         src="video-hero.mp4"
         autoPlay
         playsInline
