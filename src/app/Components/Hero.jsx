@@ -3,8 +3,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import RRSS from "../data/RRSS";
-import Image from "next/image";
-import Wallpaper from "../../../public/Enrique en una grabación de videoclip.jpg";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
 export default function Hero() {
@@ -12,17 +10,14 @@ export default function Hero() {
 
   return (
     <section id={"Hero"} className="select-none relative">
-      <Image
-        src={Wallpaper}
-        alt="Enrique en una grabación de videoclip"
-        className="w-screen h-dvh object-cover object-center"
-        quality={100}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "100dvh",
-        }}
-        priority
+      <video
+        className="w-dvw max-h-dvh object-cover"
+        src="video-hero.mp4"
+        autoPlay
+        playsInline
+        preload="auto"
+        loop
+        muted
       />
       <div className="flex flex-col items-center justify-center gap-3 absolute -bottom-2 md:bottom-2 left-[50%] transform -translate-x-2/4 -translate-y-2/4 z-10">
         <a
