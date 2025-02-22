@@ -47,7 +47,7 @@ export default function NewGallery() {
   }, [api]);
 
   return (
-    <ContentSection SectionId="book">
+    <ContentSection SectionId="galeria">
       <Title2 Class="pt-20 mb-3">Galería</Title2>
       <Carousel
         setApi={setApi}

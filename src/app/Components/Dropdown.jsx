@@ -13,7 +13,7 @@ export default function Dropdown({ HandleClick, Enlaces, setHandleClick }) {
         <div className="flex fixed left-0 justify-center items-center h-full z-40 w-full backdrop-blur-3xl">
           <ul className="space-y-20 text-center uppercase">
             {Enlaces.map(({ id, link, name }) => (
-              <li className="text-slate-100 text-4xl" key={id}>
+              <li className="text-slate-100 text-2xl max-w-[200px]" key={id}>
                 <Link onClick={() => setHandleClick(!HandleClick)} href={`/${link}`}>
                   {name}
                 </Link>
