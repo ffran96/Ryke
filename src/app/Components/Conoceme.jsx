@@ -8,7 +8,7 @@ import Title2 from "./Title2";
 export default function Conoceme() {
   return (
     <ContentSection SectionId={"conoceme"}>
-      <article className="pt-20 flex flex-col xl:flex-row items-center justify-between gap-10">
+      <article className="pt-20 flex flex-col xl:flex-row items-center justify-between">
         <div className="min-w-[365px] [&>p]:mb-4 [&>p]:text-sm md:[&>p]:text-lg [&>p]:text-pretty">
           <Title2 Class="max-w-[365px]">Conóceme</Title2>
           <p>
@@ -35,7 +35,7 @@ export default function Conoceme() {
         <Image
           alt="Enrique camara en mano"
           loading="lazy"
-          className="size-[350px] md:size-[600px] object-cover rounded-full "
+          className="size-[415px] md:size-[600px] md:scale-75 object-cover rounded-[12px] "
           src={ConocemeImage}
         />
       </article>
