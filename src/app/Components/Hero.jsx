@@ -15,6 +15,7 @@ export default function Hero() {
         src="video-hero.mp4"
         autoPlay
         playsInline
+        preload="auto"
         loop
         muted
       />
