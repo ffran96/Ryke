@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Video({Source}) {
+export default function Video({Source, Class}) {
   return (
     <video
       src={Source}
@@ -10,7 +10,7 @@ export default function Video({Source}) {
       playsInline
       loop
       preload="auto"
-      className={`w-[415px] aspect-[4/5] xl:aspect-[9/16] object-cover rounded-[12px] cursor-pointer`}
+      className={`${Class} w-[415px] object-cover rounded-[12px] cursor-pointer`}
     />
   );
 }

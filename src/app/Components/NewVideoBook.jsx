@@ -15,7 +15,7 @@ import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
 
-export default function NewVideoBook() {
+export default function NewVideoBook({AspectRatio}) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -47,7 +47,7 @@ export default function NewVideoBook() {
                 className="md:basis-auto flex flex-col gap-3"
               >
                 <Link href={`/ultimos-trabajos/${slug}`}>
-                  <Video Source={`/${src}`} />
+                  <Video Source={`/${src}`} Class={AspectRatio} />
                 </Link>
                 <h3 className="max-w-[300px] m-auto text-xl text-center">
                   {title}
