@@ -50,7 +50,7 @@ export default function SlugPage({ params }) {
       <ContentSection Class="relative">
         <Title2 Class="pt-20 mb-3">{video.title}</Title2>
         <LiteYouTubeEmbed id={video.yt} title={video.title} />
-        <NewVideoBook AspectRatio="aspect-[9/4]" />
+        <NewVideoBook AspectRatio="aspect-[9/4]" slug={params.slug} Selected="bg-[#ffbc04cf] p-[6px] rounded-[12px]" />
       </ContentSection>
     </>
   );
