@@ -7,7 +7,7 @@ import Title2 from "./Title2";
 
 export default function Conoceme() {
   return (
-    <ContentSection SectionId={"ultimos-trabajos"}>
+    <ContentSection SectionId={"conoceme"}>
       <article className="pt-20 flex flex-col xl:flex-row items-center justify-between">
         <div className="min-w-[365px] [&>p]:mb-4 [&>p]:text-sm md:[&>p]:text-lg [&>p]:text-pretty">
           <Title2 Class="max-w-[365px]">Conóceme</Title2>
