@@ -46,7 +46,7 @@ export default function NewVideoBook({AspectRatio,Selected,slug}) {
                 key={title}
                 className="md:basis-auto flex flex-col gap-3"
               >
-                <Link className={slug+".mp4"==src ? Selected : ""} href={`/ultimos-trabajos/${slug}`}>
+                <Link /* className={slug+".mp4"==src ? Selected : ""} */ href={`/ultimos-trabajos/${slug}`}>
                   <Video Source={`/${src}`} Class={AspectRatio} />
                 </Link>
                 <h3 className="max-w-[300px] m-auto text-xl text-center">
