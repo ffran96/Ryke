@@ -4,6 +4,7 @@ import Videos from "../../data/Videobook";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import NewVideoBook from "@/app/Components/NewVideoBook";
+import Title2 from "@/app/Components/Title2";
 
 // Esta función se utiliza para generar las rutas estáticas de los slugs
 export function getStaticParams() {
@@ -34,7 +35,7 @@ export default function SlugPage({ params }) {
 
   return (
     <ContentSection>
-      <h2 className="pt-20 mb-5 text-xl">{video.title}</h2>
+      <Title2 Class="pt-20 mb-3">{video.title}</Title2>
       <LiteYouTubeEmbed id={video.yt} title={video.title} />
       <NewVideoBook AspectRatio="aspect-[9/4]" />
     </ContentSection>
