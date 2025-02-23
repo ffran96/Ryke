@@ -31,7 +31,7 @@ export default function NewVideoBook({AspectRatio}) {
   }, [api]);
 
   return (
-    <ContentSection SectionId="video-book">
+    <ContentSection SectionId="ultimos-trabajos">
       <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
       <article>
         <Carousel
