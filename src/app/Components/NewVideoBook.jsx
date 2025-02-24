@@ -15,7 +15,7 @@ import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
 
-export default function NewVideoBook({AspectRatio,Selected,slug}) {
+export default function NewVideoBook({ AspectRatio, Selected, VideoSlug }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -41,15 +41,19 @@ export default function NewVideoBook({AspectRatio,Selected,slug}) {
           }}
         >
           <CarouselContent>
-            {Videos.map(({ title, src, slug }) => (
+            {Videos.map(({ title, src, slug, id }) => (
               <CarouselItem
                 key={title}
                 className="md:basis-auto flex flex-col gap-3"
               >
-                <Link /* className={slug+".mp4"==src ? Selected : ""} */ href={`/ultimos-trabajos/${slug}`}>
+                <Link
+                  className={VideoSlug + ".mp4" == src ? Selected : ""}
+                  href={`/ultimos-trabajos/${slug}`}
+
+                >
                   <Video Source={`/${src}`} Class={AspectRatio} />
                 </Link>
-                <h3 className="max-w-[300px] m-auto text-xl text-center">
+                <h3 className="max-w-[300px] m-auto text-xl text-center select-none cursor-pointer">
                   {title}
                 </h3>
               </CarouselItem>
