@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
         <div className="absolute -z-10 bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#00000019] via-40% to-[#000000] to-100%" />
         <Header />
         {children}
-        <NewVideoBook AspectRatio="aspect-[9/16]" />
+        <NewVideoBook AspectRatio="aspect-[1/1]" />
         <NewGallery />
         <Contacto />
         <Footer />
