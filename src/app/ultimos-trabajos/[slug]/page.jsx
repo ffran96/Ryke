@@ -36,24 +36,12 @@ export default function SlugPage({ params }) {
 
   return (
     <>
-      <video
-        className="h-svh  w-svw object-cover absolute"
-        src="video-hero.mp4"
-        autoPlay
-        playsInline
-        preload="auto"
-        loop
-        muted
-      />
-      <div className="absolute bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#000000b1] via-40% to-[#000000] to-100%" />
-
       <ContentSection Class="relative">
         <Title2 Class="pt-20 mb-3">{video.title}</Title2>
         <div className="bg-[#dcd9d1] p-2 rounded-[12px]">
 
         <LiteYouTubeEmbed id={video.yt} title={video.title} />
         </div>
-        <NewVideoBook AspectRatio="aspect-[9/4]" VideoSlug={params.slug} Selected="bg-[#dcd9d1] p-[6px] rounded-[12px]" />
       </ContentSection>
     </>
   );
