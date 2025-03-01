@@ -35,7 +35,7 @@ export default function Conoceme() {
         <Image
           alt="Enrique ferri camara en mano"
           loading="lazy"
-          className="size-[415px] md:size-[600px] md:scale-75 object-cover rounded-[12px] "
+          className="size-[415px] md:size-[600px] md:scale-75 object-cover rounded-[12px]"
           src={ConocemeImage}
         />
       </article>
