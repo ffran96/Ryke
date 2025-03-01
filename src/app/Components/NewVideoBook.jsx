@@ -14,8 +14,11 @@ import {
 import CarouselSelector from "./CarouselSelector";
 import Title2 from "./Title2";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-export default function NewVideoBook({ AspectRatio, Selected, VideoSlug }) {
+export default function NewVideoBook({ AspectRatio }) {
+  const params = useParams();
+  const { slug } = params; // Capturando el slug
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -47,9 +50,12 @@ export default function NewVideoBook({ AspectRatio, Selected, VideoSlug }) {
                 className="md:basis-auto flex flex-col gap-3"
               >
                 <Link
-                  className={VideoSlug + ".mp4" == src ? Selected : ""}
+                  className={
+                    params.slug + ".mp4" == src
+                      ? "bg-[#dcd9d1] box-content p-[6px] rounded-[12px] transition-all ease-in-out duration-300  shadow-sm drop-shadow-sm shadow-[#dcd9d1]"
+                      : ""
+                  }
                   href={`/ultimos-trabajos/${slug}`}
-
                 >
                   <Video Source={`/${src}`} Class={AspectRatio} />
                 </Link>
