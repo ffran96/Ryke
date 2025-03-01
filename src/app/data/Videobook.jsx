@@ -9,14 +9,6 @@ const Videos = [
   },
   {
     id: 2,
-    title: "Miggan - Tu y yo",
-    src: "short-tu-y-yo-miggan.mp4",
-    thumbnail: "",
-    slug: "short-tu-y-yo-miggan",
-    yt: "QU8lusHvELk",
-  },
-  {
-    id: 3,
     title: "RedMoon - Me dijiste adiós",
     src: "short-me-dijiste-adios-red-moon-x-ivan-valera.mp4",
     thumbnail: "",
@@ -24,12 +16,20 @@ const Videos = [
     yt: "Mv9o7fnIqNI",
   },
   {
-    id: 4,
+    id: 3,
     title: "Lil Santt - City Boss",
     src: "short-lil-santt-city-boss.mp4",
     thumbnail: "",
     slug: "short-lil-santt-city-boss",
     yt: "AKDrkL-qEm4",
+  },
+  {
+    id: 4,
+    title: "Miggan - Tu y yo",
+    src: "short-tu-y-yo-miggan.mp4",
+    thumbnail: "",
+    slug: "short-tu-y-yo-miggan",
+    yt: "QU8lusHvELk",
   },
   {
     id: 5,
