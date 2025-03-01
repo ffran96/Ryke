@@ -48,7 +48,7 @@ export default function NewGallery() {
 
   return (
     <ContentSection SectionId="galeria">
-      <Title2 Class="pt-20 mb-3">Galería</Title2>
+      <Title2 Class="pt-[65px] mb-3">Galería</Title2>
       <Carousel
         setApi={setApi}
         opts={{

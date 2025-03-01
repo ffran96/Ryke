@@ -9,16 +9,16 @@ export default function Hero() {
   const { instagram, youtube, email } = RRSS;
 
   return (
-    <section id={"Hero"} className="select-none relative">
-      <video
-        className="h-svh  w-svw object-cover"
+    <section id={"Hero"} className="select-none relative h-svh">
+{/*       <video
+        className="h-svh w-svw object-cover"
         src="video-hero.mp4"
         autoPlay
         playsInline
         preload="auto"
         loop
         muted
-      />
+      /> */}
       <div className="flex flex-col items-center justify-center gap-3 absolute -bottom-2 md:bottom-2 left-[50%] transform -translate-x-2/4 -translate-y-2/4 z-10">
         <a
           href={`mailto:${email}`}
@@ -48,7 +48,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div className="absolute bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#00000019] via-40% to-[#000000] to-100%" />
     </section>
   );
 }
