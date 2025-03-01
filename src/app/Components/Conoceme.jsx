@@ -33,7 +33,7 @@ export default function Conoceme() {
           </p>
         </div>
         <Image
-          alt="Enrique camara en mano"
+          alt="Enrique ferri camara en mano"
           loading="lazy"
           className="size-[415px] md:size-[600px] md:scale-75 object-cover rounded-[12px] "
           src={ConocemeImage}

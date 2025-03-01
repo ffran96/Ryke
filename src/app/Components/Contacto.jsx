@@ -47,7 +47,7 @@ export default function Contacto() {
       <article className="mb-5 pt-[65px] flex flex-col lg:flex-row gap-10 justify-center items-center">
         <Image
           src={ContactToRyke}
-          alt="Joss posando con una camara polaroid."
+          alt="Enrique ferri revisando correo trípode en mano"
           className="w-[400px] h-[460px]  object-cover rounded-[12px]"
         />
         {/* Si se ha enviado el formulario, renderizar el mensaje de éxito */}
