@@ -9,7 +9,7 @@ const Videos = [
   },
   {
     id: 2,
-    title: "RedMoon X Iván Valera - Me dijiste adiós",
+    title: "RedMoon - Me dijiste adiós",
     src: "short-me-dijiste-adios-red-moon-x-ivan-valera.mp4",
     thumbnail: "",
     slug: "short-me-dijiste-adios-red-moon-x-ivan-valera",
@@ -41,7 +41,7 @@ const Videos = [
   },
   {
     id: 6,
-    title: "MWS 2023 - TOP 12 - Prueba de Talento ",
+    title: "MWS 2023 - TOP 12",
     src: "short-mws-2023-prueba-talento-valencia-top-12.mp4",
     thumbnail: "",
     slug: "short-mws-2023-prueba-talento-valencia-top-12",

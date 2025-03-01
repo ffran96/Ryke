@@ -32,7 +32,7 @@ export default function NewVideoBook({ AspectRatio, Selected, VideoSlug }) {
 
   return (
     <ContentSection SectionId="ultimos-trabajos">
-      <Title2 Class="pt-20 mb-3">Últimos trabajos</Title2>
+      <Title2 Class="pt-[65px] mb-3">Últimos trabajos</Title2>
       <article>
         <Carousel
           setApi={setApi}
@@ -53,7 +53,7 @@ export default function NewVideoBook({ AspectRatio, Selected, VideoSlug }) {
                 >
                   <Video Source={`/${src}`} Class={AspectRatio} />
                 </Link>
-                <h3 className="max-w-[300px] m-auto text-xl text-center select-none cursor-pointer">
+                <h3 className="max-w-[400px] m-auto text-md uppercase text-center select-none cursor-pointer">
                   {title}
                 </h3>
               </CarouselItem>
