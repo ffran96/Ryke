@@ -13,13 +13,13 @@ export default function Header() {
   return (
     <>
       {!HandleClick && (
-        <header className="flex items-center justify-between 2xl:px-28 2xl:justify-between fixed px-6 top-0 w-full h-[67px] z-50 backdrop-blur-lg">
+        <header className="flex items-center justify-between 3xl:px-28 2xl:justify-between fixed px-6 top-0 w-full h-[67px] z-50 backdrop-blur-lg">
           <Link onClick={() => setHandleClick(false)} href="/">
             <Logo />
           </Link>
           <nav>
             {!HandleClick && (
-              <ul className="hidden 2xl:flex [&>li]:select-none">
+              <ul className="hidden 3xl:flex [&>li]:select-none">
                 {Enlaces.map(({ id, link, name }) => (
                   <li key={id}>
                     <Link
@@ -34,7 +34,7 @@ export default function Header() {
             )}
             <div className="" onClick={() => setHandleClick(!HandleClick)}>
               <FontAwesomeIcon
-                className="2xl:hidden text-3xl text-slate-100 items-center cursor-pointer"
+                className="3xl:hidden text-3xl text-slate-100 items-center cursor-pointer"
                 icon={HandleClick ? faXmark : faBars}
               />
             </div>

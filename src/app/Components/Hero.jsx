@@ -23,7 +23,7 @@ export default function Hero() {
         <a
           href={`mailto:${email}`}
           rel="no-referrer"
-          className="group decoration-none text-inherit flex justify-center items-center gap-4 text-[#ffffff] font-thin text-lg md:text-2xl rounded-full backdrop-blur-sm px-6 py-2 cursor-pointer"
+          className="group decoration-none text-inherit flex justify-center items-center gap-4 text-[#ffffff] font-thin text-sm sm:text-lg md:text-2xl rounded-full backdrop-blur-sm px-6 py-2 cursor-pointer"
         >
           <FontAwesomeIcon icon={faPaperPlane} />
           {email}
