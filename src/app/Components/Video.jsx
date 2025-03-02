@@ -9,7 +9,7 @@ export default function Video({Source, Class}) {
       muted
       playsInline
       loop
-      preload="auto"
+      preload="none"
       className={`${Class} w-[412px] object-cover rounded-[12px] cursor-pointer`}
     />
   );
