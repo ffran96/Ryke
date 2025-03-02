@@ -2,14 +2,14 @@ import React from "react";
 import ContentSection from "./ContentSection";
 import Underline from "./Underline";
 import Image from "next/image";
-import ConocemeImage from "../../../public/Enrique camara en mano.png";
+import ConocemeImage from "../../../public/enrique-ferri-galeria-1.jpg";
 import Title2 from "./Title2";
 
 export default function Conoceme() {
   return (
     <ContentSection SectionId={"conoceme"}>
       <article className="pt-[65px] flex flex-col xl:flex-row items-center justify-between">
-        <div className="min-w-[365px] [&>p]:mb-4 [&>p]:text-sm md:[&>p]:text-lg [&>p]:text-pretty">
+        <div className="min-w-[365px] max-w-[700px] [&>p]:mb-4 [&>p]:text-sm md:[&>p]:text-lg [&>p]:text-pretty">
           <Title2 Class="max-w-[365px]">Conóceme</Title2>
           <p>
             Desde siempre he sentido una profunda pasión por el mundo
@@ -35,7 +35,7 @@ export default function Conoceme() {
         <Image
           alt="Enrique ferri camara en mano"
           loading="lazy"
-          className="size-[415px] md:size-[600px] md:scale-75 object-cover rounded-[12px]"
+          className=" w-[450px] aspect-square object-cover rounded-[12px]"
           src={ConocemeImage}
         />
       </article>
