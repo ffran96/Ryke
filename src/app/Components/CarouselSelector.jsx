@@ -1,6 +1,6 @@
 export default function CarouselSelector({ Array, CurrentCard }) {
   return (
-    <div className="flex justify-center items-center my-4 md:hidden">
+    <div className="flex justify-center items-center mt-4 md:hidden">
       <ul className="flex gap-2 justify-center items-center">
         {Array.map(({ id }) => (
           <li
