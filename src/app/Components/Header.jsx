@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import Dropdown from "./Dropdown";
@@ -10,6 +9,7 @@ import { useState } from "react";
 
 export default function Header() {
   const [HandleClick, setHandleClick] = useState(false);
+
   return (
     <>
       {!HandleClick && (
@@ -19,11 +19,11 @@ export default function Header() {
           </Link>
           <nav>
             {!HandleClick && (
-              <ul className="hidden 3xl:flex [&>li]:select-none">
+              <ul className="hidden 2xl:flex [&>li]:select-none">
                 {Enlaces.map(({ id, link, name }) => (
                   <li key={id}>
                     <Link
-                      className="text-slate-100 text-2xl px-6 py-4 uppercase"
+                      className="text-slate-100 text-xl px-4 py-4 uppercase"
                       href={`/${link}`}
                     >
                       {name}
@@ -34,7 +34,7 @@ export default function Header() {
             )}
             <div className="" onClick={() => setHandleClick(!HandleClick)}>
               <FontAwesomeIcon
-                className="3xl:hidden text-3xl text-slate-100 items-center cursor-pointer"
+                className="2xl:hidden text-4xl text-slate-100 items-center cursor-pointer"
                 icon={HandleClick ? faXmark : faBars}
               />
             </div>
