@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import NewVideoBook from "./Components/NewVideoBook";
 import Contacto from "./Components/Contacto";
 import NewGallery from "./Components/NewGallery";
+import VideoHero from "./Components/VideoHero";
 
 export const metadata = {
   title: "Enrique Ferri - Filmaker profesional en Valencia",
@@ -36,15 +37,7 @@ export default function RootLayout({ children }) {
         <Analytics />
       </head>
       <body>
-        <video
-          className="h-svh  w-svw object-cover absolute -z-10"
-          src="video-hero.mp4"
-          autoPlay
-          playsInline
-          preload="auto"
-          loop
-          muted
-        />
+        <VideoHero /> {/* Usa el componente cliente */}
         <div className="absolute -z-10 bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#00000019] via-40% to-[#000000] to-100%" />
         <Header />
         {children}
