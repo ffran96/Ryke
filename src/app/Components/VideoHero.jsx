@@ -9,8 +9,8 @@ export default function VideoHero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.load(); // Reiniciar el video al cambiar de ruta
-    }
+/*       videoRef.current.load(); // Reiniciar el video al cambiar de ruta
+ */    }
   }, [pathname]);
 
   return (
