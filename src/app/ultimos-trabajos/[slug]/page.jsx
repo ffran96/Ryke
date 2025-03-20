@@ -36,8 +36,7 @@ export default function SlugPage({ params }) {
 
   return (
     <>
-      <ContentSection Class="relative">
-        <h1 className="pt-20 mb-3 uppercase tex-md">{video.title}</h1>
+      <ContentSection Class="relative pt-20">
         <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1]">
           <LiteYouTubeEmbed id={video.yt} title={video.title} poster="maxresdefault" noCookie={true}/>
         </div>
