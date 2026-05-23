@@ -49,7 +49,7 @@ export default function SlugPage({ params }) {
 
           <NewVideoBook
             AspectRatio="aspect-[16/9]"
-            CustomCarousel=""
+            CustomCarousel=" "
             Orientation="vertical"
             TitleCustomClass="hidden"
           />
