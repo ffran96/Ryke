@@ -6,6 +6,8 @@ import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import NewVideoBook from "@/app/Components/NewVideoBook";
 import Title2 from "@/app/Components/Title2";
 import Hero from "@/app/Components/Hero";
+import React, { useEffect, useState } from "react";
+
 
 // Esta función se utiliza para generar las rutas estáticas de los slugs
 export function getStaticParams() {
@@ -33,7 +35,22 @@ export default function SlugPage({ params }) {
       </>
     );
   }
-
+  
+    // Detectar mobile
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+  
+      checkMobile();
+  
+      window.addEventListener("resize", checkMobile);
+  
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+  
   return (
     <>
       <div className="max-w-[85%] m-auto pt-32 ">
@@ -50,7 +67,7 @@ export default function SlugPage({ params }) {
           <NewVideoBook
             AspectRatio="aspect-[16/9]"
             CustomCarousel=" "
-            Orientation="vertical"
+            Orientation={isMobile ? "horizontal" : "vertical"}
             TitleCustomClass="hidden"
           />
         </div>

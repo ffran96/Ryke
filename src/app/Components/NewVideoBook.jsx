@@ -29,20 +29,6 @@ export default function NewVideoBook({
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  // Detectar mobile
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   useEffect(() => {
     if (!api) return;
@@ -64,7 +50,7 @@ export default function NewVideoBook({
       <article>
         <Carousel
           className={CustomCarousel}
-          orientation={isMobile ? "horizontal" : "vertical"}
+          orientation={Orientation}
           setApi={setApi}
           opts={{
             align: "start",
