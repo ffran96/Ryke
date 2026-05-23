@@ -10,7 +10,7 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Conoceme />
-      <NewVideoBook AspectRatio="aspect-[4/5]" />
+      <NewVideoBook AspectRatio="aspect-[4/5]" Orientation="horizontal" />
       <NewGallery />
       <Contacto />
     </main>
