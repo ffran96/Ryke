@@ -36,11 +36,25 @@ export default function SlugPage({ params }) {
 
   return (
     <>
-      <ContentSection Class="relative pt-20">
-        <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1]">
-          <LiteYouTubeEmbed id={video.yt} title={video.title} poster="maxresdefault" noCookie={true}/>
+      <div className="max-w-[85%] m-auto pt-32 ">
+        <div Class="flex flex-col 2xl:flex-row justify-between  2xl:gap-24">
+          <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] 2xl:w-11/12 h-fit sticky top-32 mb-10">
+            <LiteYouTubeEmbed
+              id={video.yt}
+              title={video.title}
+              poster="maxresdefault"
+              noCookie={true}
+            />
+          </div>
+
+          <NewVideoBook
+            AspectRatio="aspect-[16/9]"
+            CustomCarousel=""
+            Orientation="vertical"
+            TitleCustomClass="hidden"
+          />
         </div>
-      </ContentSection>
+      </div>
     </>
   );
 }

@@ -16,18 +16,40 @@ import Title2 from "./Title2";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-export default function NewVideoBook({ AspectRatio }) {
+export default function NewVideoBook({
+  AspectRatio,
+  Orientation,
+  CustomCarousel,
+  TitleCustomClass,
+}) {
   const params = useParams();
-  const { slug } = params; // Capturando el slug
+  const { slug } = params;
+
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+
+  // Detectar mobile
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!api) return;
+
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
+
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
@@ -35,9 +57,14 @@ export default function NewVideoBook({ AspectRatio }) {
 
   return (
     <ContentSection SectionId="ultimos-trabajos">
-      <Title2 Class="pt-[65px] mb-3">Últimos trabajos</Title2>
+      <Title2 Class={`pt-[65px] mb-3 ${TitleCustomClass}`}>
+        Últimos trabajos
+      </Title2>
+
       <article>
         <Carousel
+          className={CustomCarousel}
+          orientation={isMobile ? "horizontal" : "vertical"}
           setApi={setApi}
           opts={{
             align: "start",
@@ -47,27 +74,27 @@ export default function NewVideoBook({ AspectRatio }) {
             {Videos.map(({ title, src, slug, id }) => (
               <CarouselItem
                 key={title}
-                className="md:basis-auto flex flex-col gap-3"
+                className="md:basis-auto flex flex-col gap-3 mr-5"
               >
                 <Link
                   className={
                     params.slug + ".mp4" == src
-                      ? "bg-[#dcd9d1] box-content p-[6px] rounded-[12px] transition-all ease-in-out duration-300  shadow-sm drop-shadow-sm shadow-[#dcd9d1]"
+                      ? "bg-[#dcd9d1] box-content p-[6px] rounded-[12px] transition-all ease-in-out duration-300 shadow-sm drop-shadow-sm shadow-[#dcd9d1]"
                       : ""
                   }
                   href={`/ultimos-trabajos/${slug}`}
                 >
                   <Video Source={`/${src}`} Class={AspectRatio} />
                 </Link>
+
                 <h3 className="max-w-[400px] m-auto text-md uppercase text-center select-none cursor-pointer">
                   {title}
                 </h3>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden xl:inline-flex absolute bottom-0 left-5 size-14 hover:bg-[#dcd9d1] hover:border-[#ffffff13] hover:text-[#000000e7] transition-colors ease-in-out duration-300" />
-          <CarouselNext className="hidden xl:inline-flex absolute bottom-0 right-5 size-14 hover:bg-[#dcd9d1] hover:border-[#ffffff13] hover:text-[#000000e7] transition-colors ease-in-out duration-300" />
         </Carousel>
+
         <CarouselSelector Array={Videos} CurrentCard={current} />
       </article>
     </ContentSection>

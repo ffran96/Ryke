@@ -9,7 +9,7 @@ export default function Conoceme() {
   return (
     <ContentSection SectionId={"conoceme"}>
       <article className="pt-[65px] flex flex-col lg:flex-row gap-4 items-center justify-between">
-        <div className="xl:w-fill flex flex-col bg-[#ffffff11] xl:h-[450px] rounded-[12px] [&>h2]:mt-4 [&>h2]:ml-4 [&>p]:mb-4 [&>p]:ml-4 [&>p]:mt-2 [&>p]:max-w-[88%] [&>p]:text-sm md:[&>p]:text-[14px]  2xl:[&>p]:text-[17px] [&>p]:leading-6 [&>p]:text-pretty">
+        <div className="xl:w-fill flex flex-col bg-[#ffffff11] xl:h-[550px] rounded-[12px] [&>h2]:mt-4 [&>h2]:ml-4 [&>p]:mb-4 [&>p]:ml-4 [&>p]:mt-2 [&>p]:max-w-[84%] [&>p]:uppercase [&>p]:text-[14px] 2xl:[&>p]:text-[15px] xl:tracking-wide [&>p]:text-pretty">
           <Title2 Class="max-w-[365px]">Conóceme</Title2>
           <p>
             Desde siempre he sentido una profunda pasión por el mundo
@@ -18,7 +18,7 @@ export default function Conoceme() {
             dinámicos y una estética cuidada</Underline> para crear experiencias que
             impacten y conecten.
           </p>
-          <p>
+          <p className="">
             Mi inspiración proviene de la cultura urbana, sus sonidos y su
             energía, elementos que integran cada uno de mis proyectos para
             <Underline> dotarlos de autenticidad y fuerza.</Underline> Trabajo con artistas de diversos
@@ -35,7 +35,7 @@ export default function Conoceme() {
         <Image
           alt="Enrique ferri camara en mano"
           loading="lazy"
-          className="w-fill h-[320px] lg:w-[300px] lg:h-[500px] xl:h-[450px] xl:w-[450px] lg:aspect-square object-cover rounded-[12px]"
+          className="w-fill h-[320px] lg:w-[300px] lg:h-[500px] xl:h-[550px] xl:w-[550px] lg:aspect-square object-cover rounded-[12px]"
           src={ConocemeImage}
         />
       </article>

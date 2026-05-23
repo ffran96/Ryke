@@ -3,13 +3,16 @@ import Conoceme from "./Components/Conoceme";
 import NewGallery from "./Components/NewGallery";
 import NewVideoBook from "./Components/NewVideoBook";
 import Contacto from "./Components/Contacto";
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 export default function Home() {
   return (
     <main className="relative">
       <Hero />
       <Conoceme />
+      <NewVideoBook AspectRatio="aspect-[4/5]" />
+      <NewGallery />
+      <Contacto />
     </main>
   );
 }

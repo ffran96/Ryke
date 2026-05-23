@@ -16,7 +16,7 @@ export default function VideoHero() {
   return (
     <video
       ref={videoRef}
-      className="h-svh w-svw object-cover absolute -z-10"
+      className="h-dvh w-dvw object-cover absolute -z-10"
       src="/video-hero.mp4"
       autoPlay
       playsInline
