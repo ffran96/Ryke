@@ -54,8 +54,8 @@ export default function SlugPage({ params }) {
   return (
     <>
       <div className="max-w-[85%] m-auto pt-32 ">
-        <div Class="flex flex-col 2xl:flex-row justify-between  2xl:gap-24">
-          <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] 2xl:w-11/12 h-fit sticky top-32 mb-10">
+        <div Class="flex flex-col md:flex-row gap-10">
+          <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] w-full h-fit sticky top-32 mb-10">
             <LiteYouTubeEmbed
               id={video.yt}
               title={video.title}
