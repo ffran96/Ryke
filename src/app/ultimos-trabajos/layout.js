@@ -20,12 +20,12 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <div className="max-w-[85%] m-auto pt-32 ">
-        <div Class="flex flex-col md:flex-row gap-10">
+      <div className="md:max-w-[85%] m-auto pt-32">
+        <div Class="flex flex-col md:flex-row gap-6">
           {children}
           <NewVideoBook
             AspectRatio="aspect-[16/9]"
-            CustomCarousel=" "
+            CustomCarousel=""
             Orientation={isMobile ? "horizontal" : "vertical"}
             TitleCustomClass="hidden"
           />
