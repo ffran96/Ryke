@@ -33,7 +33,7 @@ export default function SlugPage({ params }) {
 
   return (
     <>
-      <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] w-full h-fit sticky top-32">
+      <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] w-full h-fit sticky top-32 z-100">
         <LiteYouTubeEmbed
           id={video.yt}
           title={video.title}
