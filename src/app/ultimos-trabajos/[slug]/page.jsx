@@ -39,7 +39,7 @@ export default function SlugPage({ params }) {
           title={video.title}
           poster="maxresdefault"
           noCookie={true}
-        />
+         />
       </div>
     </>
   );
