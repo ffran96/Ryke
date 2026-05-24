@@ -10,15 +10,6 @@ export default function Hero() {
 
   return (
     <section id={"Hero"} className="select-none relative h-svh">
-{/*       <video
-        className="h-svh w-svw object-cover"
-        src="video-hero.mp4"
-        autoPlay
-        playsInline
-        preload="auto"
-        loop
-        muted
-      /> */}
       <div className="flex flex-col items-center justify-center gap-3 absolute -bottom-2 md:bottom-2 left-[50%] transform -translate-x-2/4 -translate-y-2/4 z-10">
         <a
           href={`mailto:${email}`}
