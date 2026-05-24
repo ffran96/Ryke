@@ -21,6 +21,7 @@ export default function NewVideoBook({
   Orientation,
   CustomCarousel,
   TitleCustomClass,
+  Visibility,
 }) {
   const params = useParams();
   const { slug } = params;
@@ -28,7 +29,6 @@ export default function NewVideoBook({
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-
 
   useEffect(() => {
     if (!api) return;
@@ -58,10 +58,7 @@ export default function NewVideoBook({
         >
           <CarouselContent>
             {Videos.map(({ title, src, slug, id }) => (
-              <CarouselItem
-                key={title}
-                className="md:basis-auto flex flex-col"
-              >
+              <CarouselItem key={title} className="md:basis-auto flex flex-col">
                 <Link
                   className={
                     params.slug + ".mp4" == src
@@ -79,6 +76,12 @@ export default function NewVideoBook({
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious
+            className={` ${Visibility} absolute bottom-0 left-5 size-14 hover:bg-[#dcd9d1] hover:border-[#ffffff13] hover:text-[#000000e7] transition-colors ease-in-out duration-300`}
+          />
+          <CarouselNext
+            className={`${Visibility} absolute bottom-0 right-5 size-14 hover:bg-[#dcd9d1] hover:border-[#ffffff13] hover:text-[#000000e7] transition-colors ease-in-out duration-300"`}
+          />
         </Carousel>
 
         <CarouselSelector Array={Videos} CurrentCard={current} />

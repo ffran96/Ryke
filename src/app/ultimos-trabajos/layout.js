@@ -28,6 +28,7 @@ export default function Layout({ children }) {
             CustomCarousel=""
             Orientation={isMobile ? "horizontal" : "vertical"}
             TitleCustomClass="hidden"
+            Visibility="hidden"
           />
         </div>
       </div>

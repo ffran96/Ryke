@@ -10,7 +10,11 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Conoceme />
-      <NewVideoBook AspectRatio="aspect-[4/5]" Orientation="horizontal" />
+      <NewVideoBook
+        AspectRatio="aspect-[16/9]"
+        Orientation="horizontal"
+        Visibility="hidden lg:inline-flex"
+      />
       <NewGallery />
       <Contacto />
     </main>
