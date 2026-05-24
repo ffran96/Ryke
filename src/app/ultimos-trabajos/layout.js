@@ -20,7 +20,7 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <div className="lg:max-w-[85%] m-auto pt-32">
+      <div className="sm:max-w-[85%] m-auto pt-32">
         <div Class="flex flex-col lg:flex-row gap-6">
           {children}
 
