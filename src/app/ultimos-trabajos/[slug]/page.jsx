@@ -3,11 +3,6 @@ import ContentSection from "@/app/Components/ContentSection";
 import Videos from "../../data/Videobook";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
-import NewVideoBook from "@/app/Components/NewVideoBook";
-import Title2 from "@/app/Components/Title2";
-import Hero from "@/app/Components/Hero";
-import React, { useEffect, useState } from "react";
-
 
 // Esta función se utiliza para generar las rutas estáticas de los slugs
 export function getStaticParams() {
@@ -35,42 +30,16 @@ export default function SlugPage({ params }) {
       </>
     );
   }
-  
-    // Detectar mobile
-    const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-  
-      checkMobile();
-  
-      window.addEventListener("resize", checkMobile);
-  
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
-  
+
   return (
     <>
-      <div className="max-w-[85%] m-auto pt-32 ">
-        <div Class="flex flex-col md:flex-row gap-10">
-          <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] w-full h-fit sticky top-32 mb-10">
-            <LiteYouTubeEmbed
-              id={video.yt}
-              title={video.title}
-              poster="maxresdefault"
-              noCookie={true}
-            />
-          </div>
-
-          <NewVideoBook
-            AspectRatio="aspect-[16/9]"
-            CustomCarousel=" "
-            Orientation={isMobile ? "horizontal" : "vertical"}
-            TitleCustomClass="hidden"
-          />
-        </div>
+      <div className="bg-[#dcd9d1] p-2 rounded-[12px] shadow-2xl drop-shadow-2xl shadow-[#dcd9d1] w-full h-fit sticky top-32 mb-10">
+        <LiteYouTubeEmbed
+          id={video.yt}
+          title={video.title}
+          poster="maxresdefault"
+          noCookie={true}
+        />
       </div>
     </>
   );

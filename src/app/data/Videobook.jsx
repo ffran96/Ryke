@@ -87,6 +87,14 @@ const Videos = [
     slug: "short-ojitos-de-miel-safari-club",
     yt: "xwo1hLvFH6M",
   },
+    {
+    id: 12,
+    title: "KELZ - ¿DÓNDE TE FUISTE?",
+    src: "short-ojitos-de-miel-safari-club.mp4",
+    thumbnail: "",
+    slug: "donde-te-fuiste",
+    yt: "-mqxn5OQ51s",
+  },
 ];
 
 export default Videos;
