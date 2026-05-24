@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import NewVideoBook from "@/app/Components/NewVideoBook";
+import DesktopVideoGallery from "../Components/DesktopVideoGallery";
 
 export default function Layout({ children }) {
- 
-    // Detectar mobile
+  // Detectar mobile
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -23,13 +23,18 @@ export default function Layout({ children }) {
       <div className="md:max-w-[85%] m-auto pt-32">
         <div Class="flex flex-col md:flex-row gap-6">
           {children}
-          <NewVideoBook
-            AspectRatio="aspect-[16/9]"
-            CustomCarousel=""
-            Orientation={isMobile ? "horizontal" : "vertical"}
-            TitleCustomClass="hidden"
-            Visibility="hidden"
-          />
+
+          {isMobile ? (
+            <NewVideoBook
+              AspectRatio="aspect-[16/9]"
+              CustomCarousel=""
+              Orientation="horizontal"
+              TitleCustomClass="hidden"
+              Visibility="hidden"
+            />
+          ) : (
+            <DesktopVideoGallery H3Classname="mb-5"/>
+          )}
         </div>
       </div>
     </>
