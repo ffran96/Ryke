@@ -37,8 +37,7 @@ export default function RootLayout({ children }) {
         <Analytics />
       </head>
       <body>
-        <VideoHero /> {/* Usa el componente cliente */}
-        <div className="absolute -z-10 bottom-0 w-full h-[100%] bg-gradient-to-t from-[#000000] from-0% via-[#00000019] via-40% to-[#000000] to-100%" />
+        <VideoHero />
         <Header />
         {children}
         <Footer />
