@@ -10,7 +10,7 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkMobile();
@@ -20,8 +20,8 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <div className="md:max-w-[85%] m-auto pt-32">
-        <div Class="flex flex-col md:flex-row gap-6">
+      <div className="sm:max-w-[85%] m-auto pt-32">
+        <div Class="flex flex-col lg:flex-row gap-6">
           {children}
 
           {isMobile ? (
