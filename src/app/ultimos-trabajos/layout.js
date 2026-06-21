@@ -33,7 +33,7 @@ export default function Layout({ children }) {
               Visibility="hidden"
             />
           ) : (
-            <DesktopVideoGallery H3Classname="mb-5"/>
+            <DesktopVideoGallery H3Classname="mb-5" />
           )}
         </div>
       </div>

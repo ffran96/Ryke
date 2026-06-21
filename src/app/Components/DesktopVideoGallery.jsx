@@ -10,7 +10,7 @@ export default function DesktopVideoGallery({ H3Classname }) {
 
   return (
     <article>
-      {Videos.map(({ title, src, slug, id }) => (
+      {Videos.map(({ title, src, slug }) => (
         <div key={title} className="md:basis-auto flex flex-col">
           <Link
             className={

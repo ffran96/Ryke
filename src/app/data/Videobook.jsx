@@ -1,6 +1,12 @@
 const Videos = [
   {
-    id: 1,
+    title: "KELZ - ¿DÓNDE TE FUISTE?",
+    src: "short-donde-fuiste-kelz.mp4",
+    thumbnail: "",
+    slug: "donde-te-fuiste",
+    yt: "-mqxn5OQ51s",
+  },
+  {
     title: "Stormykidd - No tengo plan B",
     src: "short-no-tengo-plab-b-stormykidd.mp4",
     thumbnail: "",
@@ -8,7 +14,6 @@ const Videos = [
     yt: "SSoQOkx904o",
   },
   {
-    id: 2,
     title: "RedMoon - Me dijiste adiós",
     src: "short-me-dijiste-adios-red-moon-x-ivan-valera.mp4",
     thumbnail: "",
@@ -16,7 +21,6 @@ const Videos = [
     yt: "Mv9o7fnIqNI",
   },
   {
-    id: 3,
     title: "Lil Santt - City Boss",
     src: "short-lil-santt-city-boss.mp4",
     thumbnail: "",
@@ -24,7 +28,6 @@ const Videos = [
     yt: "AKDrkL-qEm4",
   },
   {
-    id: 4,
     title: "Miggan - Tu y yo",
     src: "short-tu-y-yo-miggan.mp4",
     thumbnail: "",
@@ -32,7 +35,6 @@ const Videos = [
     yt: "QU8lusHvELk",
   },
   {
-    id: 5,
     title: "Montalva - Son mis raíces",
     src: "short-son-mis-raices-montalva.mp4",
     thumbnail: "",
@@ -40,7 +42,6 @@ const Videos = [
     yt: "dIi2kOZkLSA",
   },
   {
-    id: 6,
     title: "Miggan - Te ves dura",
     src: "short-te-ves-bien-dura-miggan.mp4",
     thumbnail: "",
@@ -48,7 +49,6 @@ const Videos = [
     yt: "Jwm4tlyDIPw",
   },
   {
-    id: 7,
     title: "Lil Santt - Freestyle",
     src: "short-lil-santt-freestyle.mp4",
     thumbnail: "",
@@ -56,7 +56,6 @@ const Videos = [
     yt: "-dGekMlXqw0",
   },
   {
-    id: 8,
     title: "'Aigua' de GUERRERO",
     src: "short-aigua-guerrero.mp4",
     thumbnail: "",
@@ -64,7 +63,6 @@ const Videos = [
     yt: "zz-8L5FvR30",
   },
   {
-    id: 9,
     title: "MWS 2023 - TOP 12",
     src: "short-mws-2023-prueba-talento-valencia-top-12.mp4",
     thumbnail: "",
@@ -72,7 +70,6 @@ const Videos = [
     yt: "p6BYNKQpE6A",
   },
   {
-    id: 10,
     title: "Chusco FLX - Promesas",
     src: "short-promesas-chusco.mp4",
     thumbnail: "",
@@ -80,20 +77,11 @@ const Videos = [
     yt: "_EnL6-EVM1U",
   },
   {
-    id: 11,
     title: "Safari Club - Ojitos de miel",
     src: "short-ojitos-de-miel-safari-club.mp4",
     thumbnail: "",
     slug: "short-ojitos-de-miel-safari-club",
     yt: "xwo1hLvFH6M",
-  },
-    {
-    id: 12,
-    title: "KELZ - ¿DÓNDE TE FUISTE?",
-    src: "short-ojitos-de-miel-safari-club.mp4",
-    thumbnail: "",
-    slug: "donde-te-fuiste",
-    yt: "-mqxn5OQ51s",
   },
 ];
 
