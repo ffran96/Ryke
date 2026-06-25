@@ -7,10 +7,27 @@
   src: url('/Sequel.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
-  font-family: 'Sequel', sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+header,
+.font-display {
+  font-family: 'Sequel', Arial, Helvetica, sans-serif;
+  line-height: 1.15;
+}
+
+p {
+  font-weight: 500;
 }
 
 :root {
