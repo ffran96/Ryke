@@ -11,7 +11,7 @@ export default function DesktopVideoGallery({ H3Classname }) {
   return (
     <article>
       {Videos.map(({ title, src, slug }) => (
-        <div key={title} className="md:basis-auto flex flex-col">
+        <div key={title} className="md:basis-auto flex flex-col gap-2">
           <Link
             className={
               params.slug + ".mp4" == src
