@@ -60,7 +60,7 @@ export default function Contacto() {
           /* Si no se ha enviado el formulario, renderizar el formulario */
           <form
             onSubmit={handleSubmit}
-            className="w-[320px] flex flex-col gap-3 text-[#000000]  [&>input]:rounded-[12px] [&>input]:text-md [&>input]:h-12 [&>input]:p-4 [&>textarea]:h-52 [&>input]:placeholder-[#363636] [&>input]:text-[#363636] [&>textarea]:p-4 [&>textarea]:text-md [&>textarea]:rounded-[12px] [&>textarea]:placeholder-[#363636] [&>363636]:text-[#dcd9d1]"
+            className="w-[320px] flex flex-col gap-3 text-[#000000] [&>input]:h-12 [&>input]:rounded-[12px] [&>input]:bg-[#ffffff] [&>input]:p-4 [&>input]:text-md [&>input]:text-[#111111] [&>input]:placeholder-[#363636] [&>input]:outline-none [&>input]:ring-1 [&>input]:ring-[#ffffff33] [&>input]:transition-all [&>input]:duration-300 focus:[&>input]:ring-[#dcd9d1] [&>textarea]:h-52 [&>textarea]:rounded-[12px] [&>textarea]:bg-[#ffffff] [&>textarea]:p-4 [&>textarea]:text-md [&>textarea]:text-[#111111] [&>textarea]:placeholder-[#363636] [&>textarea]:outline-none [&>textarea]:ring-1 [&>textarea]:ring-[#ffffff33] [&>textarea]:transition-all [&>textarea]:duration-300 focus:[&>textarea]:ring-[#dcd9d1]"
           >
             <input
               id="name"
