@@ -9,7 +9,7 @@ export default function Hero() {
   const { instagram, youtube, email } = RRSS;
 
   return (
-    <section id={"Hero"} className="select-none relative h-svh">
+    <section id={"Hero"} className="select-none relative h-svh text-[#ffffff]">
       <div className="flex flex-col items-center justify-center gap-3 absolute -bottom-2 md:bottom-2 left-[50%] transform -translate-x-2/4 -translate-y-2/4 z-10">
         <a
           href={`mailto:${email}`}

@@ -3,6 +3,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RRSS from "../data/RRSS";
 import ContactToggle from "./ContactToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Dropdown({ HandleClick, Enlaces, setHandleClick }) {
   const { instagram, youtube, email } = RRSS;
@@ -20,6 +21,9 @@ export default function Dropdown({ HandleClick, Enlaces, setHandleClick }) {
               </li>
             ))}
           </ul>
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <ThemeToggle className="flex" />
+          </div>
           <FontAwesomeIcon
             onClick={() => setHandleClick(!HandleClick)}
             className="absolute right-7 top-4 text-3xl text-slate-100 items-center"

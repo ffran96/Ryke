@@ -31,20 +31,23 @@ p {
 }
 
 :root {
-/*   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255; */
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html[data-theme='light'] {
+  color-scheme: light;
+  --foreground-rgb: 17, 17, 17;
+  --background-start-rgb: 242, 239, 232;
+  --background-end-rgb: 242, 239, 232;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
@@ -55,4 +58,84 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+html[data-theme='light'] main section:not(#Hero) {
+  color: #111111;
+}
+
+html[data-theme='light'] #Hero,
+html[data-theme='light'] header {
+  color: #ffffff;
+}
+
+html[data-theme='light'] header h1 {
+  color: #f2efe8;
+}
+
+html[data-theme='light'] header[data-past-hero='true'] h1,
+html[data-theme='light'] header[data-past-hero='true'] nav a,
+html[data-theme='light'] header[data-past-hero='true'] nav svg {
+  color: #000000 !important;
+}
+
+html[data-theme='light'] header[data-past-hero='true'] {
+  background: #ffffff !important;
+  border-bottom: 1px solid #00000014;
+  backdrop-filter: none !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) [class*='text-[#f2efe8'],
+html[data-theme='light'] main section:not(#Hero) [class*='text-[#ffffff'],
+html[data-theme='light'] main section:not(#Hero) [class*='text-slate-100'] {
+  color: #111111 !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) [class*='text-[#f2efe899'],
+html[data-theme='light'] main section:not(#Hero) [class*='text-[#f2efe8b8'],
+html[data-theme='light'] main section:not(#Hero) [class*='text-[#f2efe8d9'],
+html[data-theme='light'] main section:not(#Hero) [class*='text-[#ffffffd9'] {
+  color: #111111cc !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) [class*='border-[#dcd9d1'],
+html[data-theme='light'] main section:not(#Hero) [class*='border-[#ffffff'] {
+  border-color: #1111112e !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) u {
+  color: #111111 !important;
+  font-weight: 700;
+  text-decoration-color: #111111 !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) [class*='bg-[#00000066'],
+html[data-theme='light'] main section:not(#Hero) [class*='bg-[#ffffff0a'],
+html[data-theme='light'] main section:not(#Hero) [class*='bg-[#ffffff0d'] {
+  background-color: #ffffff99 !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) [class*='bg-[#dcd9d1'] {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme='light'] main section:not(#Hero) a[class*='bg-[#dcd9d1'] {
+  border-color: #111111 !important;
+}
+
+html[data-theme='light'] footer {
+  color: #111111 !important;
+  background: #f2efe8 !important;
+  border-color: #1111111f !important;
+}
+
+html[data-theme='light'] footer [class*='text-[#f2efe8'],
+html[data-theme='light'] footer [class*='text-[#ffffff'] {
+  color: #111111 !important;
+}
+
+html[data-theme='light'] footer [class*='border-[#dcd9d1'],
+html[data-theme='light'] footer [class*='border-[#ffffff'] {
+  border-color: #11111124 !important;
 }

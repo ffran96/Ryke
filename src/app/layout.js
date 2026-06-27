@@ -74,13 +74,24 @@ export const metadata = {
 
 export const viewport = {
   themeColor: "#000000",
-  colorScheme: "dark",
+  colorScheme: "dark light",
 };
+
+const themeScript = `
+  try {
+    const storedTheme = window.localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    document.documentElement.dataset.theme = storedTheme || systemTheme;
+  } catch (error) {
+    document.documentElement.dataset.theme = "dark";
+  }
+`;
 
 export default function RootLayout({ children }) {
   return (
     <html className="scroll-smooth" lang="es">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
