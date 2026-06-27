@@ -59,20 +59,25 @@ export default function NewVideoBook({
           <CarouselContent>
             {Videos.map(({ title, src, slug }) => (
               <CarouselItem key={title} className="md:basis-auto flex flex-col gap-2">
-                <Link
+                <div
                   className={
                     params.slug + ".mp4" == src
                       ? "bg-[#dcd9d1] box-content p-[6px] rounded-[12px] transition-all ease-in-out duration-300 shadow-sm drop-shadow-sm shadow-[#dcd9d1]"
                       : ""
                   }
-                  href={`/ultimos-trabajos/${slug}`}
                 >
-                  <Video Source={`/${src}`} Class={AspectRatio} />
-                </Link>
+                  <Video
+                    Source={`/${src}`}
+                    Class={AspectRatio}
+                    Href={`/ultimos-trabajos/${slug}`}
+                  />
+                </div>
 
-                <h3 className="max-w-[400px] m-auto text-md uppercase text-center select-none cursor-pointer">
-                  {title}
-                </h3>
+                <Link href={`/ultimos-trabajos/${slug}`}>
+                  <h3 className="max-w-[400px] m-auto text-md uppercase text-center select-none cursor-pointer">
+                    {title}
+                  </h3>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
