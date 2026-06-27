@@ -74,7 +74,7 @@ export default function NewVideoBook({
                 </div>
 
                 <Link href={`/ultimos-trabajos/${slug}`}>
-                  <h3 className="no-touch-select max-w-[400px] m-auto text-md uppercase text-center cursor-pointer">
+                  <h3 className="max-w-[400px] m-auto text-md uppercase text-center cursor-pointer">
                     {title}
                   </h3>
                 </Link>

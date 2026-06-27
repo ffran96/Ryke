@@ -24,11 +24,13 @@ export default function Video({ Source, Class, Href }) {
   const stopVideo = () => {
     if (!videoRef.current) return;
 
+    document.documentElement.classList.remove("is-pressing-video");
     videoRef.current.pause();
     videoRef.current.currentTime = previewTime;
   };
 
   const handlePointerDown = (event) => {
+    document.documentElement.classList.add("is-pressing-video");
     pointerStartRef.current = {
       x: event.clientX,
       y: event.clientY,

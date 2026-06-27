@@ -30,7 +30,8 @@ p {
   font-weight: 500;
 }
 
-.no-touch-select {
+html.is-pressing-video,
+html.is-pressing-video * {
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
