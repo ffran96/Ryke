@@ -14,7 +14,7 @@ export default function Hero() {
         <a
           href={`mailto:${email}`}
           rel="no-referrer"
-          className="group decoration-none text-inherit flex justify-center items-center gap-4 text-[#ffffff] font-thin text-sm sm:text-lg md:text-2xl rounded-full backdrop-blur-sm px-6 py-2 cursor-pointer"
+          className="group decoration-none text-inherit flex justify-center items-center gap-3 text-[#ffffff] font-medium text-sm sm:text-base md:text-lg rounded-full border border-[#ffffff33] bg-[#00000024] backdrop-blur-sm px-5 py-2 cursor-pointer drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] transition-all duration-300 hover:border-[#ffffff99] hover:bg-[#dcd9d1] hover:text-[#000000] hover:scale-[1.03]"
         >
           <FontAwesomeIcon icon={faPaperPlane} />
           {email}
