@@ -30,6 +30,12 @@ p {
   font-weight: 500;
 }
 
+.no-touch-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;

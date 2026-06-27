@@ -23,7 +23,7 @@ export default function DesktopVideoGallery({ H3Classname }) {
           </div>
 
           <Link href={`/ultimos-trabajos/${slug}`}>
-            <h3 className={` ${H3Classname} max-w-[400px] m-auto text-md uppercase text-center select-none cursor-pointer`}>
+            <h3 className={`no-touch-select ${H3Classname} max-w-[400px] m-auto text-md uppercase text-center cursor-pointer`}>
               {title}
             </h3>
           </Link>
