@@ -7,6 +7,7 @@ import NewVideoBook from "./Components/NewVideoBook";
 import Contacto from "./Components/Contacto";
 import NewGallery from "./Components/NewGallery";
 import VideoHero from "./Components/VideoHero";
+import ScrollTopButton from "./Components/ScrollTopButton";
 
 export const metadata = {
   title: "Enrique Ferri - Filmaker profesional en Valencia",
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <ScrollTopButton />
       </body>
     </html>
   );
