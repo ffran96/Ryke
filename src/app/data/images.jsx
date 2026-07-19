@@ -27,22 +27,6 @@ const GalleryImages = [
   },
   {
     id: 3,
-    largeURL: "/enrique-ferri-galeria-3.jpg",
-    altThumbnail: "Enrique camara en mando fotografiando en estudio de cerca",
-    thumbnailURL: Image3,
-    width: 2048,
-    height: 1536,
-  },
-  {
-    id: 4,
-    largeURL: "/enrique-ferri-galeria-4.jpg",
-    altThumbnail: "Enrique camara en mando fotografiando en estudio en vertical",
-    thumbnailURL: Image4,
-    width: 1536,
-    height: 2048,
-  },
-  {
-    id: 5,
     largeURL: "/enrique-ferri-galeria-5.jpg",
     altThumbnail: "Enrique filmando en La Bandideta Granadella beach bar",
     thumbnailURL: Image5,
@@ -50,7 +34,7 @@ const GalleryImages = [
     height: 2592,
   },
   {
-    id: 6,
+    id: 4,
     largeURL: "/enrique-ferri-galeria-6.jpg",
     altThumbnail: "Rodaje del videoclip Me dijiste adios, ronin en mano",
     thumbnailURL: Image6,
@@ -58,7 +42,7 @@ const GalleryImages = [
     height: 1728,
   },
   {
-    id: 7,
+    id: 5,
     largeURL: "/enrique-ferri-galeria-7.jpg",
     altThumbnail: "Enrique filmando a banda de musica con ronin en mano",
     thumbnailURL: Image7,
@@ -66,7 +50,7 @@ const GalleryImages = [
     height: 1728,
   },
   {
-    id: 8,
+    id: 6,
     largeURL: "/enrique-ferri-galeria-8.jpg",
     altThumbnail: "Enrique filmando en la cala Granadella",
     thumbnailURL: Image8,
