@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Video({ Source, Class, Href }) {
+const Video = forwardRef(function Video({ Source, Class, Href, Controlled = false }, ref) {
   const router = useRouter();
   const videoRef = useRef(null);
   const pointerStartRef = useRef({ x: 0, y: 0, moved: false });
   const previewTime = 0.1;
+  const sizeClass = Class || "aspect-video w-[412px]";
 
   const videoSource = `${Source}#t=${previewTime}`;
 
@@ -54,6 +55,11 @@ export default function Video({ Source, Class, Href }) {
     router.push(Href);
   };
 
+  useImperativeHandle(ref, () => ({
+    play: playVideo,
+    stop: stopVideo,
+  }));
+
   return (
     <video
       ref={videoRef}
@@ -64,19 +70,21 @@ export default function Video({ Source, Class, Href }) {
       loop
       preload="auto"
       onLoadedMetadata={showPreviewFrame}
-      onMouseEnter={playVideo}
-      onMouseLeave={stopVideo}
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={stopVideo}
-      onPointerCancel={stopVideo}
-      onFocus={playVideo}
-      onBlur={stopVideo}
-      onClick={handleClick}
+      onMouseEnter={Controlled ? undefined : playVideo}
+      onMouseLeave={Controlled ? undefined : stopVideo}
+      onPointerDown={Controlled ? undefined : handlePointerDown}
+      onPointerMove={Controlled ? undefined : handlePointerMove}
+      onPointerUp={Controlled ? undefined : stopVideo}
+      onPointerCancel={Controlled ? undefined : stopVideo}
+      onFocus={Controlled ? undefined : playVideo}
+      onBlur={Controlled ? undefined : stopVideo}
+      onClick={Controlled ? undefined : handleClick}
       onContextMenu={(event) => event.preventDefault()}
       draggable={false}
-      className={`${Class} w-[412px] object-cover rounded-[12px] cursor-pointer select-none [-webkit-touch-callout:none]`}
+      className={`${sizeClass} object-cover rounded-[12px] cursor-pointer select-none [-webkit-touch-callout:none]`}
     />
   );
-}
+});
+
+export default Video;
 

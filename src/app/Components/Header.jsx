@@ -7,10 +7,13 @@ import ThemeToggle from "./ThemeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [HandleClick, setHandleClick] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
+  const isWatchPage = pathname.startsWith("/ultimos-trabajos/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +31,7 @@ export default function Header() {
       {!HandleClick && (
         <header
           data-past-hero={isPastHero}
+          data-watch-page={isWatchPage}
           className="flex items-center justify-between 3xl:px-28 2xl:justify-between fixed px-6 top-0 w-full h-[67px] z-50 backdrop-blur-lg"
         >
           <Link onClick={() => setHandleClick(false)} href="/">
