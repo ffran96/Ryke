@@ -14,7 +14,7 @@ export default function Footer() {
       id={"footer"}
       className="mt-20 border-t border-[#dcd9d133] bg-[#070707] text-[#f2efe8]"
     >
-      <div className="mx-auto grid max-w-[320px] gap-10 py-10 sm:max-w-[415px] md:max-w-[600px] lg:max-w-4xl lg:grid-cols-[1.1fr_0.8fr_1fr] lg:py-12 xl:max-w-6xl 2xl:max-w-7xl">
+      <div className="mx-auto grid w-full max-w-[calc(100%-24px)] gap-10 py-10 sm:max-w-[calc(100%-32px)] md:max-w-[600px] lg:max-w-4xl lg:grid-cols-[1.1fr_0.8fr_1fr] lg:py-12 xl:max-w-6xl 2xl:max-w-7xl">
         <div className="space-y-4">
           <h2 className="font-display text-2xl uppercase sm:text-3xl">
             Enrique Ferri
@@ -80,7 +80,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-[#dcd9d11f] py-4">
-        <div className="mx-auto flex max-w-[320px] flex-col gap-2 text-xs text-[#f2efe88f] sm:max-w-[415px] md:max-w-[600px] lg:max-w-4xl lg:flex-row lg:items-center lg:justify-between xl:max-w-6xl 2xl:max-w-7xl">
+        <div className="mx-auto flex w-full max-w-[calc(100%-24px)] flex-col gap-2 text-xs text-[#f2efe88f] sm:max-w-[calc(100%-32px)] md:max-w-[600px] lg:max-w-4xl lg:flex-row lg:items-center lg:justify-between xl:max-w-6xl 2xl:max-w-7xl">
           <p>© {new Date().getFullYear()} Enrique Ferri. Todos los derechos reservados.</p>
           <p>
             designed by{" "}

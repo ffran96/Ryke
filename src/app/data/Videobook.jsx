@@ -4,7 +4,7 @@ const Videos = [
     title: "Safari Club - Ojitos de miel",
     src: "short-ojitos-de-miel-safari-club.mp4",
     thumbnail: "",
-    slug: "short-ojitos-de-miel-safari-club",
+    slug: "ojitos-de-miel-safari-club",
     yt: "xwo1hLvFH6M",
   },
   {
@@ -12,7 +12,7 @@ const Videos = [
     title: "Chusco FLX - Promesas",
     src: "short-promesas-chusco.mp4",
     thumbnail: "",
-    slug: "short-promesas-chusco",
+    slug: "promesas-chusco",
     yt: "_EnL6-EVM1U",
   },
   {
@@ -20,7 +20,7 @@ const Videos = [
     title: "MWS 2023 - TOP 12",
     src: "short-mws-2023-prueba-talento-valencia-top-12.mp4",
     thumbnail: "",
-    slug: "short-mws-2023-prueba-talento-valencia-top-12",
+    slug: "mws-2023-prueba-talento-valencia-top-12",
     yt: "p6BYNKQpE6A",
   },
   {
@@ -28,7 +28,7 @@ const Videos = [
     title: "'Aigua' de GUERRERO",
     src: "short-aigua-guerrero.mp4",
     thumbnail: "",
-    slug: "short-aigua-guerrero",
+    slug: "aigua-guerrero",
     yt: "zz-8L5FvR30",
   },
   {
@@ -36,7 +36,7 @@ const Videos = [
     title: "Lil Santt - Freestyle",
     src: "short-lil-santt-freestyle.mp4",
     thumbnail: "",
-    slug: "short-lil-santt-freestyle",
+    slug: "lil-santt-freestyle",
     yt: "-dGekMlXqw0",
   },
   {
@@ -44,7 +44,7 @@ const Videos = [
     title: "Miggan - Te ves dura",
     src: "short-te-ves-bien-dura-miggan.mp4",
     thumbnail: "",
-    slug: "short-te-ves-bien-dura-miggan",
+    slug: "te-ves-bien-dura-miggan",
     yt: "Jwm4tlyDIPw",
   },
   {
@@ -52,7 +52,7 @@ const Videos = [
     title: "Montalva - Son mis raíces",
     src: "short-son-mis-raices-montalva.mp4",
     thumbnail: "",
-    slug: "short-son-mis-raices-montalva",
+    slug: "son-mis-raices-montalva",
     yt: "dIi2kOZkLSA",
   },
   {
@@ -60,7 +60,7 @@ const Videos = [
     title: "Miggan - Tu y yo",
     src: "short-tu-y-yo-miggan.mp4",
     thumbnail: "",
-    slug: "short-tu-y-yo-miggan",
+    slug: "tu-y-yo-miggan",
     yt: "QU8lusHvELk",
   },
   {
@@ -68,7 +68,7 @@ const Videos = [
     title: "Lil Santt - City Boss",
     src: "short-lil-santt-city-boss.mp4",
     thumbnail: "",
-    slug: "short-lil-santt-city-boss",
+    slug: "lil-santt-city-boss",
     yt: "AKDrkL-qEm4",
   },
   {
@@ -76,7 +76,7 @@ const Videos = [
     title: "RedMoon - Me dijiste adiós",
     src: "short-me-dijiste-adios-red-moon-x-ivan-valera.mp4",
     thumbnail: "",
-    slug: "short-me-dijiste-adios-red-moon-x-ivan-valera",
+    slug: "me-dijiste-adios-red-moon-x-ivan-valera",
     yt: "Mv9o7fnIqNI",
   },
   {
@@ -84,7 +84,7 @@ const Videos = [
     title: "Stormykidd - No tengo plan B",
     src: "short-no-tengo-plab-b-stormykidd.mp4",
     thumbnail: "",
-    slug: "short-no-tengo-plab-b-stormykidd",
+    slug: "no-tengo-plab-b-stormykidd",
     yt: "SSoQOkx904o",
   },
   {
