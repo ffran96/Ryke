@@ -3,8 +3,7 @@
 import { useMemo, useRef, useState } from "react";
 import Video from "./Video";
 import Videos from "../data/Videobook";
-import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   Select,
   SelectContent,
@@ -45,10 +44,7 @@ export default function DesktopVideoGallery() {
         </p>
         <div className="watch-muted flex items-center gap-2 text-xs font-medium text-[#f2efe899]">
           Ordenar por
-          <Select
-            onValueChange={setSortBy}
-            value={sortBy}
-          >
+          <Select onValueChange={setSortBy} value={sortBy}>
             <SelectTrigger className="watch-select-trigger w-[142px]">
               <SelectValue placeholder="Orden" />
             </SelectTrigger>
@@ -76,27 +72,80 @@ function getArtist(title) {
 }
 
 function RelatedVideoCard({ video }) {
+  const router = useRouter();
   const videoRef = useRef(null);
+  const pointerStartRef = useRef({ x: 0, y: 0, moved: false });
   const href = `/ultimos-trabajos/${video.slug}`;
+
+  const playVideo = () => {
+    videoRef.current?.play();
+  };
+
+  const stopVideo = () => {
+    document.documentElement.classList.remove("is-pressing-video");
+    videoRef.current?.stop();
+  };
+
+  const handlePointerDown = (event) => {
+    document.documentElement.classList.add("is-pressing-video");
+    pointerStartRef.current = {
+      x: event.clientX,
+      y: event.clientY,
+      moved: false,
+    };
+    playVideo();
+  };
+
+  const handlePointerMove = (event) => {
+    const deltaX = Math.abs(event.clientX - pointerStartRef.current.x);
+    const deltaY = Math.abs(event.clientY - pointerStartRef.current.y);
+
+    if (deltaX > 10 || deltaY > 10) {
+      pointerStartRef.current.moved = true;
+    }
+  };
+
+  const handlePointerUp = () => {
+    stopVideo();
+
+    if (!pointerStartRef.current.moved) {
+      router.push(href);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+
+    event.preventDefault();
+    router.push(href);
+  };
 
   return (
     <article
-      className="watch-related-card group grid grid-cols-[165px_1fr] gap-3 rounded-[8px] p-2 transition-colors duration-300 hover:bg-[#ffffff12] sm:grid-cols-[180px_1fr] xl:grid-cols-[190px_1fr]"
-      onMouseEnter={() => videoRef.current?.play()}
-      onMouseLeave={() => videoRef.current?.stop()}
-      onFocus={() => videoRef.current?.play()}
-      onBlur={() => videoRef.current?.stop()}
+      className="watch-related-card group grid cursor-pointer grid-cols-[165px_1fr] gap-3 rounded-[8px] p-2 transition-colors duration-300 hover:bg-[#ffffff12] sm:grid-cols-[180px_1fr] xl:grid-cols-[190px_1fr] [-webkit-touch-callout:none]"
+      onBlur={stopVideo}
+      onContextMenu={(event) => event.preventDefault()}
+      onFocus={playVideo}
+      onKeyDown={handleKeyDown}
+      onMouseEnter={playVideo}
+      onMouseLeave={stopVideo}
+      onPointerCancel={stopVideo}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      role="link"
+      tabIndex={0}
     >
-      <Link className="overflow-hidden rounded-[8px]" href={href}>
+      <div className="overflow-hidden rounded-[8px]">
         <Video
           ref={videoRef}
           Source={`/${video.src}`}
           Class="aspect-video w-full"
           Controlled
         />
-      </Link>
+      </div>
 
-      <Link className="min-w-0 py-0.5" href={href}>
+      <div className="min-w-0 py-0.5">
         <h3 className="watch-title line-clamp-2 text-[15px] font-semibold leading-5 text-[#ffffff] transition-colors duration-300 group-hover:text-[#dcd9d1]">
           {video.title}
         </h3>
@@ -106,7 +155,7 @@ function RelatedVideoCard({ video }) {
         <p className="watch-muted text-xs leading-5 text-[#f2efe899]">
           Videoclip · Proyecto audiovisual
         </p>
-      </Link>
+      </div>
     </article>
   );
 }
