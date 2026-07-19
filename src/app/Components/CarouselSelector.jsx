@@ -2,11 +2,11 @@ export default function CarouselSelector({ Array, CurrentCard }) {
   return (
     <div className="flex justify-center items-center mt-4 lg:hidden">
       <ul className="flex gap-2 justify-center items-center">
-        {Array.map(({ id }) => (
+        {Array.map((item, index) => (
           <li
-            key={id}
+            key={item.id || item.largeURL || index}
             className={`${
-              CurrentCard == id
+              CurrentCard == index + 1
                 ? "w-3 h-3 bg-[#ffffff]"
                 : "w-2 h-2 bg-[#b8b8b8]"
             } rounded-full transition-all ease-linear`}
