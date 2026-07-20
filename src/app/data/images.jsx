@@ -1,7 +1,5 @@
 import Image1 from "../../../public/enrique-ferri-galeria-1.jpg"
 import Image2 from "../../../public/enrique-ferri-galeria-2.jpg"
-import Image3 from "../../../public/enrique-ferri-galeria-3.jpg"
-import Image4 from "../../../public/enrique-ferri-galeria-4.jpg"
 import Image5 from "../../../public/enrique-ferri-galeria-5.jpg"
 import Image6 from "../../../public/enrique-ferri-galeria-6.jpg"
 import Image7 from "../../../public/enrique-ferri-galeria-7.jpg"

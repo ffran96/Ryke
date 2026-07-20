@@ -4,8 +4,13 @@ import Videos from "../../data/Videobook";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPaperPlane,
+} from "@fortawesome/free-solid-svg-icons";
 import RRSS from "@/app/data/RRSS";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
+import EnriqueImage from "../../../../public/enrique-ferri-galeria-2.jpg"
 
 export function getStaticParams() {
   return Videos.map((video) => ({
@@ -19,13 +24,15 @@ export default function SlugPage({ params }) {
   if (!video) {
     return (
       <section className="rounded-[8px] border border-[#ffffff14] bg-[#ffffff0d] p-6">
-        <h2 className="font-display text-2xl uppercase">Video no encontrado.</h2>
+        <h2 className="font-display text-2xl uppercase">
+          Video no encontrado.
+        </h2>
       </section>
     );
   }
 
   const whatsappMessage = encodeURIComponent(
-    `Hola Enrique, he visto "${video.title}" y quiero hablar contigo sobre un videoclip.`
+    `Hola Enrique, he visto "${video.title}" y quiero hablar contigo sobre un videoclip.`,
   );
 
   const shareVideo = async () => {
@@ -66,27 +73,28 @@ export default function SlugPage({ params }) {
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex min-w-0 items-center gap-3">
             <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#dcd9d1] font-display text-sm uppercase text-[#111111]">
-              EF
+              <Image src={EnriqueImage} className="rounded-full object-cover size-11" />
             </div>
             <div className="min-w-0">
               <p className="watch-title font-semibold leading-5 text-[#ffffff]">
                 Enrique Ferri
               </p>
               <p className="watch-muted text-sm leading-5 text-[#f2efe899]">
-                Filmmaker · Valencia
+                Filmmaker en Valencia
               </p>
             </div>
+          </div>
+
+          <div className="flex gap-2 overflow-x-auto pb-1">
             <a
-              className="watch-primary-button ml-1 rounded-full bg-[#ffffff] px-4 py-2 text-sm font-semibold text-[#111111] transition-colors duration-300 hover:bg-[#dcd9d1]"
+              className="flex gap-2 justify-center items-center watch-primary-button ml-1 rounded-full bg-[#ffffff] px-4 py-2 text-sm font-semibold text-[#111111] transition-colors duration-300 hover:bg-[#dcd9d1]"
               href={`https://wa.me/${RRSS.whatsapp}?text=${whatsappMessage}`}
               rel="no-referrer"
               target="_blank"
             >
-              Quiero un videoclip
+              <FontAwesomeIcon className="text-xl" icon={faWhatsapp} />
+              <span>Quiero un videoclip</span>
             </a>
-          </div>
-
-          <div className="flex gap-2 overflow-x-auto pb-1">
             <button
               className="watch-action-button inline-flex shrink-0 items-center gap-2 rounded-full bg-[#ffffff1a] px-4 py-2 text-sm font-semibold text-[#ffffff] transition-colors duration-300 hover:bg-[#ffffff2b]"
               onClick={shareVideo}
